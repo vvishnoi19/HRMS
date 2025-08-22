@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="./assets/css/attendence.css">
      <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/Modals/milestone.css">
      <link rel="stylesheet" href="./assets/css/Modals/reqemp.css">
      <link rel="stylesheet" href="./assets/css/dropdown.css">
     
@@ -186,428 +187,724 @@
        
  
 
-    <div class="container">
+  <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1 class="title">Attendance Overview</h1>
-            <div class="tabs-container">
-                <button class="tab active" onclick="switchTab('attendance-records')">Attendance Records</button>
-                <button class="tab" onclick="switchTab('attendance-requests')">Attendance Requests</button>
+            <div class="header-left">
+                <div class="nav-title active" data-main-tab="overview">Attendance Overview</div>
+                <div class="requests-section">
+                    <div class="nav-title" data-main-tab="requests">Attendance Requests</div>
+                    <div class="badge">4</div>
+                </div>
+            </div>
+            
+            <div class="tabs-container" id="sub-tabs">
+                <!-- Sub tabs will be populated by JavaScript -->
             </div>
         </div>
 
-        <!-- Stats Grid - Attendance Records -->
-        <div id="attendance-records-stats" class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="stat-label">Present</span>
-                    <svg class="stat-icon" viewBox="0 0 24 24">
-                        <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-value">96</div>
-                </div>
-            </div>
+        <!-- Main Content -->
+     
+            <!-- Overview Tab Content -->
+            <div class="tab-content active" id="overview-content">
+                <!-- My Team Sub-tab -->
+                <div class="tab-content active" id="overview-my-team">
+                
 
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="stat-label">Absent</span>
-                    <svg class="stat-icon" viewBox="0 0 24 24">
-                        <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-value">4</div>
-                </div>
-            </div>
+                    <!-- Calendar -->
+                    <div class="calendar-header">
+                        <div class="calendar-title">April 2025</div>
+                        <div class="calendar-nav">
+                            <button class="nav-btn">
+                                <span class="icon chevron-left"></span>
+                                Back
+                            </button>
+                            <button class="nav-btn">
+                                Next
+                                <span class="icon chevron-right"></span>
+                            </button>
+                        </div>
+                    </div>
 
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="stat-label">Corrections Requested</span>
-                    <svg class="stat-icon" viewBox="0 0 24 24">
-                        <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-value">22</div>
-                </div>
-            </div>
+                    <!-- Legend -->
+                    <div class="legend">
+                        <div class="legend-item">
+                            <strong>Note:</strong>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-icon" style="background: #6C5FFC;"></div>
+                            Holiday
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-icon" style="background: #1ABC9C;"></div>
+                            Day Off
+                        </div>
+                        <div class="legend-divider"></div>
+                        <div class="legend-item">
+                            <div class="legend-icon" style="background: #34B53A;"></div>
+                            Present
+                        </div>
+                        <div class="legend-divider"></div>
+                        <div class="legend-item">
+                            <div class="legend-icon" style="background: #80CAFF;"></div>
+                            Half Day
+                        </div>
+                        <div class="legend-divider"></div>
+                        <div class="legend-item">
+                            <div class="legend-icon" style="background: #FFB200;"></div>
+                            Late
+                        </div>
+                        <div class="legend-divider"></div>
+                        <div class="legend-item">
+                            <div class="legend-icon" style="background: #FF3A29;"></div>
+                            Absent
+                        </div>
+                        <div class="legend-divider"></div>
+                        <div class="legend-item">
+                            <div class="legend-icon" style="background: #9747FF;"></div>
+                            On Leave
+                        </div>
+                    </div>
 
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="stat-label">Task Overdue Rate</span>
-                    <svg class="stat-icon" viewBox="0 0 24 24">
-                        <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-value">6%</div>
-                </div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="stat-label">Half day Count Today</span>
-                    <svg class="stat-icon" viewBox="0 0 24 24">
-                        <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M19 8V14" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M22 11H16" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-value">6</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Stats Grid - Attendance Requests -->
-        <div id="attendance-requests-stats" class="stats-grid hidden">
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="stat-label">Pending Requests</span>
-                    <svg class="stat-icon" viewBox="0 0 24 24">
-                        <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-value">12</div>
-                </div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="stat-label">Approved Today</span>
-                    <svg class="stat-icon" viewBox="0 0 24 24">
-                        <path d="M9 12L11 14L15 10M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-value">8</div>
-                </div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="stat-label">Rejected Today</span>
-                    <svg class="stat-icon" viewBox="0 0 24 24">
-                        <path d="M12 8V12M12 16H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-value">3</div>
-                </div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="stat-label">Average Response Time</span>
-                    <svg class="stat-icon" viewBox="0 0 24 24">
-                        <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-value">2.4h</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Secondary Stats Grid - For Attendance Records -->
-        <div id="attendance-records-secondary" class="stats-grid" style="margin-bottom: 24px;">
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="stat-label">Assigned Target</span>
-                    <svg class="stat-icon" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="12" cy="12" r="6" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="12" cy="12" r="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-value">56</div>
-                </div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="stat-label">Achieved Targets</span>
-                    <svg class="stat-icon" viewBox="0 0 24 24">
-                        <path d="M9 12L11 14L15 10M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-value">42 (75%)</div>
-                </div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="stat-label">Pending Targets</span>
-                    <svg class="stat-icon" viewBox="0 0 24 24">
-                        <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-value">5</div>
-                </div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="stat-label">Overdue Targets</span>
-                    <svg class="stat-icon" viewBox="0 0 24 24">
-                        <path d="M12 8V12M12 16H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-value">5</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Hide secondary stats for requests -->
-        <div id="attendance-requests-secondary" class="hidden" style="margin-bottom: 24px;"></div>
-
-        <!-- Filters -->
-        <div class="filters">
-            <input type="text" class="search-input" placeholder="Search">
-         <div class="filter-dropdown-wrapper">
-    <div class="filter-dropdown" onclick="toggleDropdown(this)">
-        <span>Sort By</span>
-        <svg class="chevron-down" viewBox="0 0 16 16" fill="none">
-            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.33333"/>
-        </svg>
-    </div>
-    <div class="dropdown-options hidden">
-        <div class="option">Name</div>
-        <div class="option">Date</div>
-        <div class="option">Performance</div>
-    </div>
-</div>
-            <div class="filter-dropdown-wrapper">
-    <div class="filter-dropdown" onclick="toggleDropdown(this)">
-        <span>Department</span>
-        <svg class="chevron-down" viewBox="0 0 16 16" fill="none">
-            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.33333"/>
-        </svg>
-    </div>
-    <div class="dropdown-options hidden">
-        <div class="option">Name</div>
-        <div class="option">Date</div>
-        <div class="option">Performance</div>
-    </div>
-</div>
-           <div class="filter-dropdown-wrapper">
-    <div class="filter-dropdown" onclick="toggleDropdown(this)">
-        <span>Gender</span>
-        <svg class="chevron-down" viewBox="0 0 16 16" fill="none">
-            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.33333"/>
-        </svg>
-    </div>
-    <div class="dropdown-options hidden">
-        <div class="option">Name</div>
-        <div class="option">Date</div>
-        <div class="option">Performance</div>
-    </div>
-</div>
-        </div>
-
-        <!-- Table for Attendance Records -->
-        <div id="attendance-records-table" class="table-container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Employee ID</th>
-                        <th>Employee Name</th>
-                        <th>Date</th>
-                        <th>Day</th>
-                        <th>Check In</th>
-                        <th>Check Out</th>
-                        <th>Break</th>
-                        <th>Working Hours</th>
-                        <th>Status</th>
+                    <!-- Calendar Grid -->
+                    <div class="calendar-grid">
+                        <div class="calendar-header-row">
+                            <div class="calendar-header-cell">Employee</div>
+                            <div class="calendar-header-cell">1</div>
+                            <div class="calendar-header-cell">2</div>
+                            <div class="calendar-header-cell">3</div>
+                            <div class="calendar-header-cell">4</div>
+                            <div class="calendar-header-cell">5</div>
+                            <div class="calendar-header-cell">6</div>
+                            <div class="calendar-header-cell">7</div>
+                            <div class="calendar-header-cell">8</div>
+                            <div class="calendar-header-cell">9</div>
+                            <div class="calendar-header-cell">10</div>
+                            <div class="calendar-header-cell">11</div>
+                            <div class="calendar-header-cell">12</div>
+                            <div class="calendar-header-cell">13</div>
+                            <div class="calendar-header-cell">14</div>
+                            <div class="calendar-header-cell">15</div>
+                            <div class="calendar-header-cell">16</div>
+                            <div class="calendar-header-cell">17</div>
+                            <div class="calendar-header-cell">18</div>
+                            <div class="calendar-header-cell">19</div>
+                            <div class="calendar-header-cell">20</div>
+                            <div class="calendar-header-cell">21</div>
+                            <div class="calendar-header-cell">22</div>
+                            <div class="calendar-header-cell">23</div>
+                            <div class="calendar-header-cell">24</div>
+                            <div class="calendar-header-cell">25</div>
+                            <div class="calendar-header-cell">26</div>
+                            <div class="calendar-header-cell">27</div>
+                            <div class="calendar-header-cell">28</div>
+                            <div class="calendar-header-cell">29</div>
+                            <div class="calendar-header-cell">30</div>
+                            <div class="calendar-header-cell">31</div>
+                        </div>
                         
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>WB001</td>
-                        <td>Ayush Kumar</td>
-                        <td>12/09/2025</td>
-                        <td>Monday</td>
-                        <td>09:28 AM</td>
-                        <td>07:00 PM</td>
-                        <td>00:30 Min</td>
-                        <td>09:02 Hrs</td>
-                        <td><span class="status-tag status-present">Present</span></td>
-                    </tr>
-                    <tr>
-                        <td>WB002</td>
-                        <td>Sarah Johnson</td>
-                        <td>12/09/2025</td>
-                        <td>Monday</td>
-                        <td>09:15 AM</td>
-                        <td>06:30 PM</td>
-                        <td>00:45 Min</td>
-                        <td>08:30 Hrs</td>
-                        <td><span class="status-tag status-absent">Absent</span></td>
-                    </tr>
-                </tbody>
-            </table>
+                        <!-- Employee rows will be populated by JavaScript -->
+                        <div id="calendar-rows"></div>
+                    </div>
+                </div>
+
+                <!-- Only Me Sub-tab -->
+                <div class="tab-content" id="overview-only-me">
+                     <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-title">Team Size</div>
+                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21" stroke="#224FB1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16 3.12891C16.8578 3.35128 17.6174 3.85217 18.1597 4.55297C18.702 5.25377 18.9962 6.1148 18.9962 7.00091C18.9962 7.88702 18.702 8.74805 18.1597 9.44884C17.6174 10.1496 16.8578 10.6505 16 10.8729" stroke="#224FB1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22 21.0009V19.0009C21.9993 18.1146 21.7044 17.2536 21.1614 16.5532C20.6184 15.8527 19.8581 15.3524 19 15.1309" stroke="#224FB1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#224FB1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            </div>
+                            <div class="stat-card-value">20</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-title">Present Team members</div>
+                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M16 11L18 13L22 9" stroke="#224FB1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21" stroke="#224FB1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#224FB1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            </div>
+                            <div class="stat-card-value">14</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-title">Absent Team members</div>
+                 
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21" stroke="#224FB1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#224FB1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17 8L22 13" stroke="#224FB1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22 8L17 13" stroke="#224FB1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                            </div>
+                            <div class="stat-card-value">6</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-title">Members on leave</div>
+                               
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 0C17.6569 0 19 1.34315 19 3C19 4.65685 17.6569 6 16 6C14.3431 6 13 4.65685 13 3C13 1.34315 14.3431 0 16 0Z" fill="#224FB1"/>
+<path d="M7.70711 3.29289C7.31658 2.90237 6.68342 2.90237 6.29289 3.29289L0.29289 9.2929C-0.09763 9.6834 -0.09763 10.3166 0.29289 10.7071C0.68342 11.0976 1.31658 11.0976 1.70711 10.7071L2 10.4142V13C2 13.5523 2.44772 14 3 14H9C9.5523 14 10 13.5523 10 13C10 12.4477 9.5523 12 9 12H4V8.4142L7 5.41421L8.5429 6.95711C8.9334 7.34763 9.5666 7.34763 9.9571 6.95711C10.3476 6.56658 10.3476 5.93342 9.9571 5.54289L7.70711 3.29289Z" fill="#224FB1"/>
+<path d="M15.8944 6.55289C15.6848 6.13367 15.2122 5.91629 14.7575 6.02996L10.7575 7.02996C10.4742 7.10076 10.2361 7.29179 10.1056 7.55289L9.10556 9.55292C8.85856 10.0468 9.05876 10.6475 9.55276 10.8945C10.0468 11.1415 10.6474 10.9413 10.8944 10.4473L11.6887 8.85872L13.3452 8.44462L12.0715 11.6287C11.9319 11.9778 11.9998 12.3757 12.2474 12.6586L15.5 16.3758V19.0001C15.5 19.5524 15.9477 20.0001 16.5 20.0001C17.0523 20.0001 17.5 19.5524 17.5 19.0001V16.0001C17.5 15.7579 17.4121 15.5239 17.2526 15.3416L14.156 11.8026L15.1014 9.43902L15.6056 10.4473C15.8072 10.8506 16.2539 11.0691 16.6961 10.9807L19.1961 10.4807C19.7377 10.3724 20.0889 9.84552 19.9806 9.30402C19.8723 8.76242 19.3454 8.41122 18.8039 8.51952L17.0528 8.86972L15.8944 6.55289Z" fill="#224FB1"/>
+<path d="M11.5299 14.7577C11.6638 14.2219 12.2067 13.8961 12.7425 14.0301C13.2783 14.164 13.6041 14.7069 13.4701 15.2427L12.9701 17.2427C12.9262 17.4186 12.8353 17.5791 12.7071 17.7073L10.7071 19.7073C10.3166 20.0978 9.68338 20.0978 9.29287 19.7073C8.90237 19.3168 8.90237 18.6836 9.29287 18.2931L11.097 16.4889L11.5299 14.7577Z" fill="#224FB1"/>
+</svg>
+
+                            </div>
+                            <div class="stat-card-value">2</div>
+                        </div>
+                    </div>
+                      <div class="calendar-wrapper">
+        <!-- Header -->
+        <div class="header-section">
+            <h1 class="year-title">2025</h1>
+            <div class="nav-controls">
+                <button class="nav-button">
+                    <span class="chevron-left"></span>
+                    Back
+                </button>
+                <button class="nav-button">
+                    Next
+                    <span class="chevron-right"></span>
+                </button>
+            </div>
         </div>
 
-        <!-- Table for Attendance Requests -->
-        <div id="attendance-requests-table" class="table-container hidden">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Request ID</th>
-                        <th>Employee Name</th>
-                        <th>Request Type</th>
-                        <th>Date Requested</th>
-                        <th>Reason</th>
-                        <th>Submitted Date</th>
-                        <th>Approver</th>
-                        <th>Response Time</th>
-                        <th>Status</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>REQ001</td>
-                        <td>Michael Chen</td>
-                        <td>Leave Request</td>
-                        <td>15/09/2025</td>
-                        <td>Medical Appointment</td>
-                        <td>12/09/2025</td>
-                        <td>HR Manager</td>
-                        <td>2.5 Hrs</td>
-                        <td><span class="status-tag status-pending">Pending</span></td>
-                        <td>
-                          <div class="action-wrapper" style="position: relative;">
-        <button class="action-btn" id="action"   aria-haspopup="true" aria-expanded="false">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
-                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
-                <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
-            </svg>
-        </button>
+        <!-- Legend -->
+        <div class="status-legend">
+            <div class="legend-label">Note:</div>
+            <div class="legend-color" style="background-color: #6C5FFC;"></div>
+            <div class="legend-group">Holiday</div>
+            <div class="legend-color" style="background-color: #1ABC9C;"></div>
+            <div class="legend-group">Day Off</div>
+            <div class="legend-separator"></div>
+            <div class="legend-color" style="background-color: #34B53A;"></div>
+            <div class="legend-group">Present</div>
+            <div class="legend-separator"></div>
+            <div class="legend-color" style="background-color: #80CAFF;"></div>
+            <div class="legend-group">Half Day</div>
+            <div class="legend-separator"></div>
+            <div class="legend-color" style="background-color: #FFB200;"></div>
+            <div class="legend-group">Late</div>
+            <div class="legend-separator"></div>
+            <div class="legend-color" style="background-color: #FF3A29;"></div>
+            <div class="legend-group">Absent</div>
+            <div class="legend-separator"></div>
+            <div class="legend-color" style="background-color: #9747FF;"></div>
+            <div class="legend-group">On Leave</div>
+        </div>
 
-        <div class="dropdown-container" role="menu" aria-label="Actions menu" style="display: none;">
-            <div class="dropdown-section">
-            
-                  <div class="dropdown-item" role="menuitem" tabindex="0" >
-                    <div class="dropdown-item-content" data-open-modal="AR-modal-01">
-                        <div class="dropdown-item-text poppins">View Attendace Req</div>
-                        <div class="dropdown-item-icon">
-                            <!-- Eye icon -->
-                        </div>
-                    </div>
-                </div>
-                  <div class="dropdown-item" role="menuitem" tabindex="0" >
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text poppins">Approve</div>
-                        <div class="dropdown-item-icon">
-                            <!-- Eye icon -->
-                        </div>
-                    </div>
-                </div>
-                  <div class="dropdown-item" role="menuitem" tabindex="0" >
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text poppins">Reject</div>
-                        <div class="dropdown-item-icon">
-                            <!-- Eye icon -->
-                        </div>
-                    </div>
-                </div>
+        <!-- Calendar Table -->
+        <div class="calendar-table">
+            <!-- Header Row -->
+            <div class="table-header">
+                <div class="month-header">Month</div>
+                <div class="day-header">1</div>
+                <div class="day-header">2</div>
+                <div class="day-header">3</div>
+                <div class="day-header">4</div>
+                <div class="day-header">5</div>
+                <div class="day-header">6</div>
+                <div class="day-header">7</div>
+                <div class="day-header">8</div>
+                <div class="day-header">9</div>
+                <div class="day-header">10</div>
+                <div class="day-header">11</div>
+                <div class="day-header">12</div>
+                <div class="day-header">13</div>
+                <div class="day-header">14</div>
+                <div class="day-header">15</div>
+                <div class="day-header">16</div>
+                <div class="day-header">17</div>
+                <div class="day-header">18</div>
+                <div class="day-header">19</div>
+                <div class="day-header">20</div>
+                <div class="day-header">21</div>
+                <div class="day-header">22</div>
+                <div class="day-header">23</div>
+                <div class="day-header">24</div>
+                <div class="day-header">25</div>
+                <div class="day-header">26</div>
+                <div class="day-header">27</div>
+                <div class="day-header">28</div>
+                <div class="day-header">29</div>
+                <div class="day-header">30</div>
+                <div class="day-header">31</div>
+            </div>
+
+            <!-- Employee Row 1 - January -->
+            <div class="employee-row">
+                <div class="month-cell">January</div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-holiday">★</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-dayoff">☐</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-late">⚠</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-absent">✗</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-leave">🏠</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-holiday">★</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+            </div>
+
+            <!-- Employee Row 2 - February -->
+            <div class="employee-row">
+                <div class="month-cell">February</div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-holiday">★</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-dayoff">☐</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-late">⚠</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-absent">✗</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-leave">🏠</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-holiday">★</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+            </div>
+
+            <!-- Employee Row 3 - March -->
+            <div class="employee-row">
+                <div class="month-cell">March</div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-holiday">★</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-dayoff">☐</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-late">⚠</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-absent">✗</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-leave">🏠</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-holiday">★</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
+                <div class="day-cell"><div class="status-indicator status-present">✓</div></div>
             </div>
         </div>
     </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>REQ002</td>
-                        <td>Emily Davis</td>
-                        <td>Time Correction</td>
-                        <td>13/09/2025</td>
-                        <td>Forgot to check out</td>
-                        <td>12/09/2025</td>
-                        <td>Team Lead</td>
-                        <td>1.2 Hrs</td>
-                        <td><span class="status-tag status-approved">Approved</span></td>
-                        <td>   
-                         <div class="action-wrapper" style="position: relative;">
-        <button class="action-btn" id="action"   aria-haspopup="true" aria-expanded="false">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
-                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
-                <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
-            </svg>
-        </button>
 
-        <div class="dropdown-container" role="menu" aria-label="Actions menu" style="display: none;">
-            <div class="dropdown-section">
-            
-                  <div class="dropdown-item" role="menuitem" tabindex="0" >
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text poppins">Download PaySlip</div>
-                        <div class="dropdown-item-icon">
-                            <!-- Eye icon -->
-                        </div>
-                    </div>
+
+
+                  
+
+
+
+
                 </div>
+
+                <!-- All Employee Sub-tab -->
+                <div class="tab-content" id="overview-all-employee">
+                     <div class="calendar-container">
+        <!-- Calendar Header -->
+        <div class="calendar-header">
+            <h1 class="calendar-title">April 2025</h1>
+            <div class="nav-buttons">
+                <button class="nav-btn">
+                    <span class="chevron-left"></span>
+                    Back
+                </button>
+                <button class="nav-btn">
+                    Next
+                    <span class="chevron-right"></span>
+                </button>
             </div>
         </div>
-    </div></td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-note">Note:</div>
+            <div class="legend-icon" style="background-color: #6C5FFC;"></div>
+            <div class="legend-item">Holiday</div>
+            <div class="legend-icon" style="background-color: #1ABC9C;"></div>
+            <div class="legend-item">Day Off</div>
+            <div class="legend-divider"></div>
+            <div class="legend-icon" style="background-color: #34B53A;"></div>
+            <div class="legend-item">Present</div>
+            <div class="legend-divider"></div>
+            <div class="legend-icon" style="background-color: #80CAFF;"></div>
+            <div class="legend-item">Half Day</div>
+            <div class="legend-divider"></div>
+            <div class="legend-icon" style="background-color: #FFB200;"></div>
+            <div class="legend-item">Late</div>
+            <div class="legend-divider"></div>
+            <div class="legend-icon" style="background-color: #FF3A29;"></div>
+            <div class="legend-item">Absent</div>
+            <div class="legend-divider"></div>
+            <div class="legend-icon" style="background-color: #9747FF;"></div>
+            <div class="legend-item">On Leave</div>
+        </div>
+
+        <!-- Calendar Table -->
+        <div class="calendar-table">
+            <!-- Header Row -->
+            <div class="calendar-header-row">
+                <div class="calendar-cell employee-header-cell">Employee</div>
+                <div class="calendar-cell">1</div>
+                <div class="calendar-cell">2</div>
+                <div class="calendar-cell">3</div>
+                <div class="calendar-cell">4</div>
+                <div class="calendar-cell">5</div>
+                <div class="calendar-cell">6</div>
+                <div class="calendar-cell">7</div>
+                <div class="calendar-cell">8</div>
+                <div class="calendar-cell">9</div>
+                <div class="calendar-cell">10</div>
+                <div class="calendar-cell">11</div>
+                <div class="calendar-cell">12</div>
+                <div class="calendar-cell">13</div>
+                <div class="calendar-cell">14</div>
+                <div class="calendar-cell">15</div>
+                <div class="calendar-cell">16</div>
+                <div class="calendar-cell">17</div>
+                <div class="calendar-cell">18</div>
+                <div class="calendar-cell">19</div>
+                <div class="calendar-cell">20</div>
+                <div class="calendar-cell">21</div>
+                <div class="calendar-cell">22</div>
+                <div class="calendar-cell">23</div>
+                <div class="calendar-cell">24</div>
+                <div class="calendar-cell">25</div>
+                <div class="calendar-cell">26</div>
+                <div class="calendar-cell">27</div>
+                <div class="calendar-cell">28</div>
+                <div class="calendar-cell">29</div>
+                <div class="calendar-cell">30</div>
+                <div class="calendar-cell">31</div>
+            </div>
+
+            <!-- Employee Row 1 - Ayush Kumar -->
+            <div class="calendar-row">
+                <div class="employee-cell">
+                    <div class="employee-profile">
+                        <div class="profile-avatar" style="background-color: #fecaca;">AK</div>
+                        <div class="employee-name">Ayush Kumar</div>
+                    </div>
+                </div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-holiday">★</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-dayoff">☐</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-late">⚠</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-absent">✗</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-leave">🏠</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-holiday">★</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+            </div>
+
+            <!-- Employee Row 2 - Chirag Arora -->
+            <div class="calendar-row">
+                <div class="employee-cell">
+                    <div class="employee-profile">
+                        <div class="profile-avatar" style="background-color: #bae6fd;">CA</div>
+                        <div class="employee-name">Chirag Arora</div>
+                    </div>
+                </div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-holiday">★</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-dayoff">☐</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-late">⚠</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-absent">✗</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-leave">🏠</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-holiday">★</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+            </div>
+
+            <!-- Employee Row 3 - Dipanshu Singh -->
+            <div class="calendar-row">
+                <div class="employee-cell">
+                    <div class="employee-profile">
+                        <div class="profile-avatar" style="background-color: #a7f3d0;">DS</div>
+                        <div class="employee-name">Dipanshu Singh</div>
+                    </div>
+                </div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-holiday">★</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-dayoff">☐</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-late">⚠</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-absent">✗</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-leave">🏠</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-holiday">★</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+                <div class="status-cell"><div class="status-icon status-present">✓</div></div>
+            </div>
         </div>
 
         <!-- Pagination -->
         <div class="pagination">
-            <div class="pagination-info">Showing 1-2 of 2</div>
+            <div class="pagination-info">Showing 1-10 of 20</div>
             <div class="pagination-controls">
                 <div class="rows-per-page">
                     <span>Rows per page</span>
                     <select class="page-select">
                         <option value="10">10</option>
-                        <option value="25">25</option>
+                        <option value="20">20</option>
                         <option value="50">50</option>
                     </select>
                 </div>
-                <span>Page 1 of 1</span>
-                <div class="nav-buttons">
-                    <button class="nav-button" disabled>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M7.33333 11.3333L4 8L7.33333 4.66667M12 11.3333L8.66667 8L12 4.66667" stroke="#105427" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <button class="nav-button" disabled>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M10 12L6 8L10 4" stroke="#105427" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <button class="nav-button">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M6 12L10 8L6 4" stroke="#105427" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <button class="nav-button">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M4 11.3333L7.33333 8L4 4.66667M8.66667 11.3333L12 8L8.66667 4.66667" stroke="#105427" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
+                <div class="page-info">Page 1 of 10</div>
+                <div class="page-buttons">
+                    <button class="page-btn" disabled><span class="chevrons-left"></span></button>
+                    <button class="page-btn" disabled><span class="chevron-left"></span></button>
+                    <button class="page-btn"><span class="chevron-right"></span></button>
+                    <button class="page-btn"><span class="chevrons-right"></span></button>
                 </div>
             </div>
         </div>
     </div>
+                 
+                </div>
+            </div>
+
+            <!-- Requests Tab Content -->
+            <div class="tab-content" id="requests-content">
+                <!-- My Team's Request Sub-tab -->
+                <div class="tab-content active" id="requests-team">
+                    <div class="controls">
+                        <input type="text" class="search-input" placeholder="Search" />
+                                     <div class="filter-dropdown-wrapper">
+    <div class="filter-dropdown" onclick="toggleDropdown(this)">
+        <span>Team</span>
+        <svg class="chevron-down" viewBox="0 0 16 16" fill="none">
+            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.33333"/>
+        </svg>
+    </div>
+    <div class="dropdown-options hidden">
+        <div class="option">Name</div>
+        <div class="option">Date</div>
+        <div class="option">Performance</div>
+    </div>
+</div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="table">
+                            <thead class="table-header">
+                                <tr>
+                                    <th>Employee Name</th>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                    <th>Check In</th>
+                                    <th>Check Out</th>
+                                    <th>Working Hours</th>
+                                    <th>Status</th>
+                                    <th width="64"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="team-requests-body">
+                              
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <div class="pagination-info">Showing 1-10 of 20</div>
+                        <div class="pagination-controls">
+                            <div class="rows-per-page">
+                                <span>Rows per page</span>
+                                <select class="page-select">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                            <div class="page-info">Page 1 of 10</div>
+                            <div class="page-buttons">
+                                <button class="page-btn" disabled>⪤</button>
+                                <button class="page-btn" disabled>‹</button>
+                                <button class="page-btn">›</button>
+                                <button class="page-btn">⪢</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Requests Sub-tab -->
+                <div class="tab-content" id="requests-my">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <h2 style="font-size: 20px; font-weight: 600; color: #1e293b;">My Requests</h2>
+                        <button class="create-btn" data-open-modal="attendance-request">
+                            <span class="icon plus-icon"></span>
+                            Create Attendance Request
+                        </button>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="table">
+                            <thead class="table-header">
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                    <th>Check In</th>
+                                    <th>Check Out</th>
+                                    <th>Working Hours</th>
+                                    <th>Status</th>
+                                    <th width="64"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="my-requests-body">
+                                <!-- My requests will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <div class="pagination-info">Showing 1-10 of 20</div>
+                        <div class="pagination-controls">
+                            <div class="rows-per-page">
+                                <span>Rows per page</span>
+                                <select class="page-select">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                            <div class="page-info">Page 1 of 10</div>
+                            <div class="page-buttons">
+                                <button class="page-btn" disabled>⪤</button>
+                                <button class="page-btn" disabled>‹</button>
+                                <button class="page-btn">›</button>
+                                <button class="page-btn">⪢</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
    
 
@@ -704,6 +1001,99 @@
     </div>
 </div>
 
+<div class="modal-overlay" id="attendance-req" data-modal-id="attendance-request" style="display: none;" data-close-on-click="true">
+        <div class="modal-container">
+        <!-- Header -->
+        <div class="modal-header">
+            <h1 class="header-title">Create Attendance Request</h1>
+            <button class="close-button"  data-close-modal>
+                <svg class="close-icon" fill="none" viewBox="0 0 24 24">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Content -->
+        <div class="modal-content">
+            <div class="content-container">
+                <!-- Form Content -->
+                <div class="form-content">
+                    <!-- Name -->
+                    <div class="form-group full-width">
+                        <label class="form-label">Date</label>
+                            <div class="date-input-container">
+                                <input type="text" class="form-input date-input" id="startDate" value="16/05/2025" placeholder="DD/MM/YYYY">
+                                <svg class="date-icon" fill="none" viewBox="0 0 16 16">
+                                    <path d="M5.33333 1.33333V4" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+                                    <path d="M10.6667 1.33333V4" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+                                    <path d="M12.6667 2.66667H3.33333C2.59695 2.66667 2 3.26362 2 4V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V4C14 3.26362 13.403 2.66667 12.6667 2.66667Z" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+                                    <path d="M2 6.66667H14" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+                                </svg>
+                            </div>
+                    </div>
+
+                 
+
+                    <!-- Start Date and End Date -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Check In Time</label>
+                            <div class="date-input-container">
+                                <input type="text" class="form-input date-input" id="startDate" value="16/05/2025" placeholder="DD/MM/YYYY">
+                                <svg class="date-icon" fill="none" viewBox="0 0 16 16">
+                                    <path d="M5.33333 1.33333V4" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+                                    <path d="M10.6667 1.33333V4" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+                                    <path d="M12.6667 2.66667H3.33333C2.59695 2.66667 2 3.26362 2 4V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V4C14 3.26362 13.403 2.66667 12.6667 2.66667Z" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+                                    <path d="M2 6.66667H14" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Check Out Time</label>
+                            <div class="date-input-container">
+                                <input type="text" class="form-input date-input" id="endDate" value="16/05/2025" placeholder="DD/MM/YYYY">
+                                <svg class="date-icon" fill="none" viewBox="0 0 16 16">
+                                    <path d="M5.33333 1.33333V4" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+                                    <path d="M10.6667 1.33333V4" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+                                    <path d="M12.6667 2.66667H3.33333C2.59695 2.66667 2 3.26362 2 4V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V4C14 3.26362 13.403 2.66667 12.6667 2.66667Z" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+                                    <path d="M2 6.66667H14" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                      <div class="field-group" >
+                        <label class="field-label required">Description</label>
+                        <div class="textarea-container" id="description-group">
+                            <textarea 
+                                class="textarea-field" 
+                                id="description-input"
+                                placeholder="Explain briefly"
+                                rows="5"
+                            ></textarea>
+                            <svg class="resize-handle" fill="none" viewBox="0 0 20 20">
+                                <g opacity="0.6">
+                                    <path d="M17.6459 10.6463C17.8411 10.4511 18.1577 10.4512 18.3529 10.6463C18.5482 10.8415 18.5482 11.1581 18.3529 11.3533L11.3529 18.3533C11.1577 18.5484 10.8411 18.5485 10.6459 18.3533C10.4509 18.1581 10.4509 17.8415 10.6459 17.6463L17.6459 10.6463ZM17.6107 14.6111C17.8059 14.4159 18.1225 14.4161 18.3178 14.6111C18.513 14.8064 18.513 15.1229 18.3178 15.3182L15.3051 18.3309L15.227 18.3953C15.0329 18.5234 14.7689 18.5017 14.598 18.3309C14.4274 18.16 14.4055 17.8959 14.5336 17.7019L14.598 17.6238L17.6107 14.6111Z" fill="#1E293B"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="modal-footer">
+            <button class="btn-cancel" data-close-modal>
+                <div class="btn-text">Cancel</div>
+            </button>
+            <button class="btn-submit" onclick="submitMilestone()">
+                <div class="btn-text">Submit</div>
+            </button>
+        </div>
+    </div>
+    </div>
 
 
     </div>
