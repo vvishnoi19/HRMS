@@ -28,13 +28,7 @@ function switchTab(tabName) {
     const paymentHistoryPanel = document.getElementById('payment-history');
     const paymentSummaryPanel = document.getElementById('payment-summary');
 
-    if (tabName === 'payment-history') {
-        if (paymentHistoryPanel) paymentHistoryPanel.style.display = 'block';
-        if (paymentSummaryPanel) paymentSummaryPanel.style.display = 'none';
-    } else {
-        if (paymentSummaryPanel) paymentSummaryPanel.style.display = 'block';
-        if (paymentHistoryPanel) paymentHistoryPanel.style.display = 'none';
-    }
+  
 
     // ✅ Toggle title sections
     const historyTitle = document.getElementById('payment-history-title');

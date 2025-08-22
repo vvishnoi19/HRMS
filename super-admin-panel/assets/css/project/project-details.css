@@ -237,6 +237,7 @@ body{
 
         .project-progress-container {
             width: 440px;
+            padding-left: 40px;
         }
 
         .project-progress-bar {
