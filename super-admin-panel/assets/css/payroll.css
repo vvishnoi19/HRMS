@@ -7,6 +7,11 @@
             gap: 24px;
         }
 
+        .heading-controller-content{
+            display: flex;
+            justify-content: space-between;
+            
+        }
         /* Header */
         .header-control {
             display: flex;
