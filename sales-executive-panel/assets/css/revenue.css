@@ -1,0 +1,673 @@
+  
+        .dashboard {
+            padding: 32px;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .revenue-header {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 32px;
+            color: #1e293b;
+            margin-bottom: 24px;
+        }
+        .container{
+            padding: 30px;
+        }
+
+        /* Revenue Cards */
+        .revenue-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .revenue-card {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1.5px solid #cbd5e1;
+            box-shadow: 0px 10px 15px -3px rgba(34, 79, 177, 0.06), 0px 4px 6px -4px rgba(34, 79, 177, 0.06);
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 24px 24px 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-header h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #64748b;
+        }
+
+        .card-icon {
+            width: 24px;
+            height: 24px;
+            color: #224fb1;
+        }
+
+        .card-content {
+            padding: 0 24px 24px 24px;
+        }
+
+        .card-amount {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 1;
+            color: #1e293b;
+            letter-spacing: -0.6px;
+        }
+
+        /* Charts Container */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .chart-container {
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .chart-header {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chart-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 1.5;
+            color: #1e293b;
+        }
+
+        .chart-content {
+            padding: 24px;
+        }
+
+        .time-selector {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 4px 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: #1e293b;
+            cursor: pointer;
+        }
+
+        /* Bar Chart */
+        .bar-chart-container {
+            height: 356px;
+            position: relative;
+        }
+
+        /* Top Client Pie Chart */
+        .top-client-container {
+            text-align: center;
+        }
+
+        .pie-chart-wrapper {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .client-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .legend-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .legend-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: #374151;
+        }
+
+        .legend-percentage {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: #374151;
+        }
+
+        /* Project Tables */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .project-table {
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .table-header {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .table-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 1.5;
+            color: #1e293b;
+        }
+
+        .table-content {
+            padding: 24px;
+        }
+
+        .project-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .project-row:last-child {
+            border-bottom: none;
+        }
+
+        .project-name {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .project-amount {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #18191b;
+        }
+
+        /* Sales Overview */
+        .sales-overview-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .sales-overview {
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            text-align: center;
+        }
+
+        .sales-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 1.5;
+            color: #0e0f11;
+            margin-bottom: 32px;
+        }
+
+        .donut-chart-container {
+            width: 400px;
+            height: 200px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .sales-legend {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .sales-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Billing Charts */
+        .billing-charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .horizontal-bar-chart {
+            height: 300px;
+        }
+
+        .donut-with-legend {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .donut-chart-small {
+            width: 290px;
+            height: 290px;
+        }
+
+        .hours-legend {
+            flex: 1;
+        }
+
+        .hours-legend-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .hours-legend-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hours-legend-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .hours-time {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: #1e293b;
+        }
+
+        .hours-percentage {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #64748b;
+            width: 60px;
+            text-align: right;
+        }
+
+        /* Payment Records */
+        .payment-records {
+            background: #ffffff;
+           
+            overflow: hidden;
+        }
+
+        .payment-header {
+         
+           margin-bottom: 10px;
+        }
+
+        .payment-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .payment-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 32px;
+            color: #1e293b;
+        }
+
+        .payment-tabs {
+            background: #f1f5f9;
+            border-radius: 8px;
+            padding: 4px;
+            display: flex;
+        }
+
+        .payment-tab {
+            background: transparent;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .payment-tab.active {
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+        }
+
+        .payment-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .payment-controls-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .payment-controls-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .search-input {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 8px 12px;
+            width: 290px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .filter-select {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 6px 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: #1e293b;
+            cursor: pointer;
+        }
+
+        .date-picker {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 8px 12px;
+            width: 240px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #1e293b;
+        }
+
+        .add-payment-btn {
+            background: #224fb1;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Data Table */
+        .data-table {
+            overflow-x: auto;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th {
+            background: #ffffff;
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #a2a1a8;
+        }
+
+        .table td {
+            padding: 16px;
+            border-bottom: 1px solid #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #16151c;
+        }
+
+        .table tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        .project-color {
+            display: inline-block;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-weight: 400;
+        }
+
+        .project-color.crm { color: #d73965; }
+        .project-color.ui { color: #9f50b7; }
+        .project-color.prototype { color: #6040b1; }
+        .project-color.research { color: #d4b207; }
+        .project-color.accessibility { color: #4d79e6; }
+
+        .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            color: #224fb1;
+        }
+
+        /* Pagination */
+        .pagination {
+            margin-top: 16px;
+            display: flex;
+            justify-content: between;
+            align-items: center;
+          
+        }
+
+        .pagination-left {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .pagination-right {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-left: auto;
+        }
+
+        .rows-per-page {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .page-info {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #1e293b;
+        }
+
+        .pagination-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .pagination-btn {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1400px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sales-overview-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .billing-charts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .donut-with-legend {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                padding: 16px;
+            }
+            
+            .revenue-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .payment-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .payment-controls-left,
+            .payment-controls-right {
+                justify-content: center;
+            }
+            
+            .search-input {
+                width: 100%;
+            }
+            
+            .data-table {
+                font-size: 12px;
+            }
+            
+            .pagination-right {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card-header {
+                padding: 16px 16px 8px 16px;
+            }
+            
+            .card-content {
+                padding: 0 16px 16px 16px;
+            }
+            
+            .chart-header,
+            .chart-content {
+                padding: 16px;
+            }
+            
+            .payment-title-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 16px;
+            }
+        }
+
+        /* Icons */
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+ 

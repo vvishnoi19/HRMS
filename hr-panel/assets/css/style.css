@@ -1,0 +1,516 @@
+/* sidebar */
+@import url("https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css");
+
+
+@import url("/resources/demos/style.css");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+     body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: white;
+            color: #1e293b;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+/* Container Layout */
+.container {
+   width: 100%;
+    height: 100vh;
+    /* padding: 30px; */
+    overflow-y: auto;
+    height: 100vh;
+    scrollbar-width: none;
+}
+
+.main-container {
+        /* padding:0; */
+            display: flex;
+            width: 100%;
+            max-width: 100%;
+        } 
+
+/* Sidebar Styles */
+.sidebar {
+    width: 256px;
+    height: 100vh;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #3672d3;
+        overflow-y: auto;
+    height: 100vh;
+    scrollbar-width: none;
+}
+.sidebar-container{
+    height: 100vh;
+  
+}
+
+/* Logo Section */
+.logo-section {
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-icon img{
+    height: 50px;
+}
+
+.logo-icon span {
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Navigation Styles */
+.navigation {
+    flex: 1;
+
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin-bottom: 8px;
+    
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    padding-left: 20px;
+    color: #d1d5db;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.nav-icon{
+
+     width: 2rem;
+  height: 2rem;
+
+}
+.nav-item.active{
+    background-color: #2465cd;
+}
+
+.nav-list .nav-name{
+    margin-left: 10px;
+    font-size: 19px;
+}
+
+.nav-item:hover {
+    background-color: #3672d3;
+    color: #ffffff;
+}
+
+.nav-item:hover .nav-icon {
+    color: #ffffff;
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    color: #9ca3af;
+    transition: color 0.2s ease;
+    stroke-width: 2;
+}
+
+.nav-item span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Divider */
+.divider {
+    height: 1px;
+    background-color: #374151;
+    margin: 24px 0;
+}
+
+/* User Section */
+.user-section {
+    padding: 16px;
+    border-top: 1px solid #374151;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.user-profile:hover {
+    background-color: #374151;
+}
+
+.user-profile:hover .logout-icon {
+    color: #ffffff;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    background-color: #4b5563;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-avatar span {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-name {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.user-email {
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+.logout-icon {
+    width: 16px;
+    height: 16px;
+    color: #9ca3af;
+    transition: color 0.2s ease;
+    stroke-width: 2;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    padding: 32px;
+    overflow-y: auto !important;
+    scrollbar-width: none;
+    height: 100vh;
+}
+
+.content-wrapper {
+ 
+    margin: 0 auto;
+}
+
+.content-wrapper h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #111827;
+}
+
+.content-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.content-card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #111827;
+}
+
+.content-card p {
+    color: #6b7280;
+    margin-bottom: 24px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background-color: #f9fafb;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.card p {
+    color: #6b7280;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 1000;
+        transition: left 0.3s ease;
+    }
+    
+    .sidebar.active {
+        left: 0;
+    }
+    
+    .main-content {
+        padding: 16px;
+    }
+    
+    .content-wrapper h1 {
+        font-size: 24px;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Active State for Navigation Items */
+.nav-item.active {
+    background-color: #2465cd;
+    color: #ffffff;
+}
+.nav-item.active .nav-icon {
+    color: #ffffff;
+}
+
+/* Scrollbar Styling for Webkit Browsers */
+.sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #2465cd;
+    border-radius: 2px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #2465cd;
+}
+
+
+.filter-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.filter-dropdown {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.chevron-down {
+    width: 12px;
+    height: 12px;
+}
+
+.dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 5px;
+    min-width: 150px;
+}
+
+.dropdown-options .option {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.dropdown-options .option:hover {
+    background-color: #f5f5f5;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.filter-dropdown{
+    background-color: white;
+}
+
+
+
+
+
+
+
+.calendar-popup.hidden {
+    display: none;
+}
+
+#customDateInput{
+    border: none;
+}
+.filter-dropdown{
+    background-color: white;
+    border: 1px solid #ccc;
+}
+.date-picker{
+    flex-direction: row;
+}
+
+.custom-date-input
+{
+    border: none;
+}
+
+.action-btn{
+    background-color: transparent !important;
+}
+.dropdown-item{
+    padding: 0;
+}
+
+
+
+
+/*  */
+ .rows-select{
+    padding: 8px 8px ;
+ }
+ .pagination{
+    padding: 0 !important;
+    margin-top: 10px;
+ }
+
+
+
+ 
+/* arrow image */
+.nav-item {
+    display: flex;
+    align-items: center;
+   
+}
+.nav-item .arrow-logo{
+    stroke-width: 2;
+    position: absolute;
+    left: 227px;
+    width: 40px !important;
+    height: 40px !important;
+    
+  
+}
+
+
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #888;
+}
+
+.nav-item svg path {
+  fill: currentColor; /* Makes SVG use the text color */
+ 
+}
+
+.nav-item.active {
+  color: white; /* Text + SVG color changes */
+  background-color: #007bff;
+}
+.nav-item:hover{
+    background-color: #007bff;
+}
+
+.sidebar a svg {
+  width: 26px !important;
+  height: 26px !important;
+}
+.action-btn{
+    background:transparent;
+}
+
+
+
+/* for calendar */
+
+    .ui-datepicker td.ui-datepicker-range a { background: #e6f0ff !important; }
+.ui-datepicker td.ui-datepicker-range-start a,
+.ui-datepicker td.ui-datepicker-range-end a { background: #b3d1ff !important; }
+    .daterange{
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #e6f0ff;
+    width: fit-content;
+   font-family: Inter;
+}
+
+.icon{
+    fill:none !important;
+}

@@ -1,0 +1,512 @@
+/* _______________modals css __________________*/
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --font-size: 14px;
+            --white: #ffffff;
+            --background: #ffffff;
+            --foreground: #1b1b1b;
+            --muted-foreground: #73757c;
+            --border: #e8e8e9;
+            --border-light: #efefef;
+            --card-background: #fcfcfc;
+            --slate-200: #e2e8f0;
+            --slate-600: #475569;
+            --primary-blue: #224fb1;
+            --border-radius: 6px;
+            --border-radius-lg: 12px;
+            --border-radius-xl: 16px;
+        }
+    
+        /* reimbursement modal */
+
+
+        :root {
+            --create-reimbursement-font-size: 14px;
+            --create-reimbursement-white: #ffffff;
+            --create-reimbursement-slate-700: #334155;
+            --create-reimbursement-slate-800: #1e293b;
+            --create-reimbursement-slate-500: #64748b;
+            --create-reimbursement-slate-200: #e2e8f0;
+            --create-reimbursement-slate-100: #f1f5f9;
+            --create-reimbursement-gray-500: #6b7280;
+            --create-reimbursement-primary-blue: #224fb1;
+            --create-reimbursement-border-radius: 6px;
+            --create-reimbursement-border-radius-lg: 8px;
+        }
+        .side-modal{
+            display: flex;
+            justify-content: end;
+        }
+        .side-modal .modal-container{
+            height: 100vh;
+            width: 600px;
+            max-width: 600px;
+            max-height: 100vh;
+          
+        }
+        .side-modal .header-inner{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .create-reimbursement-container {
+            background: var(--create-reimbursement-white);
+            border-radius: var(--create-reimbursement-border-radius-lg);
+            width: 100%;
+            max-width: 700px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .create-reimbursement-header {
+            position: relative;
+            width: 100%;
+        }
+
+        .create-reimbursement-header-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .create-reimbursement-header-inner {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 32px;
+            width: 100%;
+        }
+
+        .create-reimbursement-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            color: var(--create-reimbursement-slate-700);
+            line-height: 30px;
+            white-space: nowrap;
+        }
+
+        .create-reimbursement-close-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .create-reimbursement-close-icon:hover {
+            opacity: 0.7;
+        }
+
+        .create-reimbursement-close-svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Separator */
+        .create-reimbursement-separator {
+            height: 1px;
+            width: 100%;
+            position: relative;
+        }
+
+        .create-reimbursement-separator-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: -1px;
+        }
+
+        .create-reimbursement-separator-svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Message Container */
+        .create-reimbursement-message-container {
+            width: 100%;
+        }
+   
+
+        .create-reimbursement-message-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .create-reimbursement-message-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 24px 32px;
+            width: 100%;
+        }
+
+        /* Form Container */
+        .create-reimbursement-form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        /* Select/Input Field */
+        .create-reimbursement-field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        .create-reimbursement-field-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--create-reimbursement-slate-800);
+            line-height: 20px;
+            width: 100%;
+        }
+
+        .create-reimbursement-field {
+            background: var(--create-reimbursement-white);
+            height: 40px;
+            border-radius: var(--create-reimbursement-border-radius);
+            width: 100%;
+            position: relative;
+        }
+
+        .create-reimbursement-field-inner {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        .create-reimbursement-field-content {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            height: 40px;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 8px 12px;
+            width: 100%;
+        }
+
+        .create-reimbursement-field-input {
+            flex: 1;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            min-height: 0;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+
+        .create-reimbursement-field-input::placeholder {
+            color: var(--create-reimbursement-slate-500);
+        }
+
+        .create-reimbursement-field-input.filled {
+            color: var(--create-reimbursement-slate-800);
+        }
+
+        .create-reimbursement-field-border {
+            position: absolute;
+            border: 1px solid var(--create-reimbursement-slate-200);
+            border-radius: var(--create-reimbursement-border-radius);
+            inset: 0;
+            pointer-events: none;
+        }
+
+        /* Textarea */
+        .create-reimbursement-textarea {
+            background: var(--create-reimbursement-white);
+            height: 120px;
+            border-radius: var(--create-reimbursement-border-radius);
+            width: 100%;
+            position: relative;
+        }
+
+        .create-reimbursement-textarea-inner {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        .create-reimbursement-textarea-content {
+            display: flex;
+            flex-direction: row;
+            height: 120px;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 10px 12px;
+            width: 100%;
+        }
+
+        .create-reimbursement-textarea-input {
+            flex: 1;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: var(--create-reimbursement-gray-500);
+            line-height: 20px;
+            height: 100px;
+            min-height: 0;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            border: none;
+            outline: none;
+            background: transparent;
+            resize: none;
+        }
+
+        .create-reimbursement-textarea-input::placeholder {
+            color: var(--create-reimbursement-gray-500);
+        }
+
+        .create-reimbursement-resize-thumb {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+        }
+
+        .create-reimbursement-resize-thumb-svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+        }
+
+        .create-reimbursement-textarea-border {
+            position: absolute;
+            border: 1px solid var(--create-reimbursement-slate-200);
+            border-radius: var(--create-reimbursement-border-radius);
+            inset: 0;
+            pointer-events: none;
+        }
+
+        /* Two Column Row */
+        .create-reimbursement-row {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        .create-reimbursement-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-start;
+            justify-content: flex-start;
+            min-height: 0;
+            min-width: 0;
+        }
+
+        /* Date Field Special */
+        .create-reimbursement-date-content {
+            display: flex;
+            flex-direction: row;
+            height: 40px;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 8px 12px;
+            width: 100%;
+        }
+
+        .create-reimbursement-date-text {
+            flex: 1;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: var(--create-reimbursement-slate-800);
+            line-height: 20px;
+            min-height: 0;
+            min-width: 0;
+        }
+
+        .create-reimbursement-calendar-wrap {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            padding-left: 16px;
+            padding-right: 0;
+        }
+
+        .create-reimbursement-calendar-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .create-reimbursement-calendar-svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .create-reimbursement-date-border {
+            position: absolute;
+            border: 1px solid var(--create-reimbursement-slate-200);
+            border-radius: 7px;
+            inset: -1px;
+            pointer-events: none;
+        }
+
+        /* Button Container */
+        .create-reimbursement-button-container {
+            width: 100%;
+        }
+
+        .create-reimbursement-button-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            height: 100%;
+        }
+
+        .create-reimbursement-button-inner {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 24px 32px;
+            width: 100%;
+        }
+
+        /* Buttons */
+        .create-reimbursement-button {
+            display: flex;
+            flex-direction: row;
+            gap: 4px;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+            overflow: hidden;
+            padding: 8px 12px;
+            border-radius: var(--create-reimbursement-border-radius);
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+
+        .create-reimbursement-button:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .create-reimbursement-button:active {
+            transform: translateY(0);
+        }
+
+        .create-reimbursement-cancel-button {
+            background: var(--create-reimbursement-slate-100);
+        }
+
+        .create-reimbursement-submit-button {
+            background: var(--create-reimbursement-primary-blue);
+        }
+
+        .create-reimbursement-button-wrap {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 4px 0;
+        }
+
+        .create-reimbursement-button-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            white-space: pre;
+        }
+
+        .create-reimbursement-cancel-button .create-reimbursement-button-text {
+            color: var(--create-reimbursement-primary-blue);
+        }
+
+        .create-reimbursement-submit-button .create-reimbursement-button-text {
+            color: var(--create-reimbursement-white);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            .create-reimbursement-container {
+                max-width: 100%;
+            }
+
+            .create-reimbursement-header-inner,
+            .create-reimbursement-message-inner,
+            .create-reimbursement-button-inner {
+                padding: 16px 20px;
+            }
+
+            .create-reimbursement-row {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .create-reimbursement-button-inner {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .create-reimbursement-button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .create-reimbursement-title {
+                font-size: 18px;
+            }
+        }
+  

@@ -1,0 +1,291 @@
+  
+        .container {
+            
+            padding: 30px;
+        }
+
+        /* Header */
+        .header-control {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .header-control h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        /* Tab System */
+        .tab-container {
+            background-color: #f1f5f9;
+            padding: 4px;
+            border-radius: 8px;
+            display: inline-flex;
+        }
+
+        .tab-input {
+            display: none;
+        }
+
+        .tab-label {
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            color: #64748b;
+            transition: all 0.2s;
+            min-width: 56px;
+            text-align: center;
+        }
+
+        .tab-input:checked + .tab-label {
+            background-color: white;
+            color: #000;
+            box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.05);
+        }
+
+        /* Statistics Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 0;
+            border: 1.5px solid #dbeafe;
+            box-shadow: 0px 10px 15px -3px rgba(34,79,177,0.06), 0px 4px 6px -4px rgba(34,79,177,0.06);
+        }
+
+        .stat-header {
+            padding: 24px 24px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stat-title {
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .stat-icon {
+            width: 24px;
+            height: 24px;
+            color: #224fb1;
+        }
+
+        .stat-content {
+            padding: 0 24px 24px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1e293b;
+            letter-spacing: -0.6px;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .left-controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .right-controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .search-input, .select-input, .date-input {
+            padding: 8px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 14px;
+            background: white;
+        }
+
+        .search-input {
+            width: 290px;
+        }
+
+        .search-input::placeholder {
+            color: #64748b;
+        }
+
+        .btn-primary {
+            background: #224fb1;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Table */
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+    
+            margin-bottom: 16px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-header {
+           
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .table-header th {
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 400;
+            color: #a2a1a8;
+        }
+
+        .table-body tr {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .table-body tr:last-child {
+            border-bottom: none;
+        }
+
+        .table-body td {
+            padding: 16px;
+            font-size: 14px;
+            color: #16151c;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        #received:checked ~ .content .received-content,
+        #receivable:checked ~ .content .receivable-content {
+            display: block;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .pagination-info {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .pagination-controls {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .rows-per-page {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            color: #1e293b;
+            font-size: 14px;
+        }
+       .rows-per-page .select-input{
+        padding: 8px 8px !important;
+
+        }
+
+        .page-info {
+            color: #1e293b;
+            font-size: 14px;
+        }
+
+        .page-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .page-btn {
+            width: 32px;
+            height: 32px;
+            border: 1px solid #e2e8f0;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .more-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+        }
+
+        /* Icons */
+        .icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .icon-large {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+  
+
+
+        #received:checked ~ .header-control .tab-container label[for="received"],
+#receivable:checked ~ .header-control .tab-container label[for="receivable"] {
+    background: #ffffff;
+    color: rgb(3, 3, 3);
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}

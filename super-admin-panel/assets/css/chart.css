@@ -1,0 +1,223 @@
+
+        /* Chart Section */
+        .chart-section {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+            height: 80px;
+        }
+
+        .chart-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        .chart-controls {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .legend {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+        }
+
+        .legend-color.prashant {
+            background-color: #166534;
+        }
+
+        .legend-color.mukul {
+            background-color: #16a34a;
+        }
+
+        .legend-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: #1e293b;
+            line-height: 18px;
+        }
+
+        .time-filter {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 14px;
+            color: #1e293b;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            line-height: 24px;
+        }
+
+        .chart-content {
+            position: relative;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            display: flex;
+            height: 100%;
+            gap: 32px;
+            width: 100%;
+            max-width: 100%;
+            align-items: end;
+            background-color: white;
+        }
+
+        /* Y-Axis */
+        .y-axis {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            width: 80px;
+            text-align: right;
+            padding-bottom: 16px;
+            color: #374151;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: -0.56px;
+        }
+
+        .y-axis-label {
+            line-height: 20px;
+        }
+
+        /* Grid Lines */
+        .grid-lines {
+            position: absolute;
+            top: 40px;
+            right: 24px;
+            left: 136px;
+            height: 276px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 16px;
+        }
+
+        .grid-line {
+            height: 1px;
+            background-color: #e2e8f0;
+            width: 100%;
+        }
+
+        /* Chart Bars Container */
+        .chart-bars {
+            display: flex;
+            gap: 60px;
+            z-index: 999;
+            align-items: end;
+            flex: 1;
+            padding-bottom: 16px;
+        }
+
+        .month-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            flex: 1;
+            height: 100%;
+        }
+
+        .bars-container {
+            display: flex;
+            gap: 4px;
+            align-items: end;
+            flex: 1;
+            width: 100%;
+        }
+
+        .bar {
+            flex: 1;
+            border-radius: 2px;
+            min-height: 1px;
+        }
+
+        .bar.prashant {
+            background-color: #166534;
+        }
+
+        .bar.mukul {
+            background-color: #16a34a;
+        }
+
+        .month-label {
+            font-size: 16px;
+            color: #4b5563;
+            text-align: center;
+            line-height: 20px;
+            margin-top: 4px;
+        }
+
+        /* Bar Heights - Based on the data from React component */
+        .jan .bar.prashant { height: 146px; }
+        .jan .bar.mukul { height: 171px; }
+
+        .feb .bar.prashant { height: 247px; }
+        .feb .bar.mukul { height: 218px; }
+
+        .mar .bar.prashant { height: 276px; }
+        .mar .bar.mukul { height: 203px; }
+
+        .apr .bar.prashant { height: 185px; }
+        .apr .bar.mukul { height: 268px; }
+
+        .may .bar.prashant { height: 276px; }
+        .may .bar.mukul { height: 162px; }
+
+        .jun .bar.prashant { height: 276px; }
+        .jun .bar.mukul { height: 100px; }
+
+        .jul .bar.prashant { height: 1px; }
+        .jul .bar.mukul { height: 1px; }
+
+        .aug .bar.prashant { height: 1px; }
+        .aug .bar.mukul { height: 1px; }
+
+        .sep .bar.prashant { height: 1px; }
+        .sep .bar.mukul { height: 1px; }
+
+        .oct .bar.prashant { height: 1px; }
+        .oct .bar.mukul { height: 1px; }
+
+        .nov .bar.prashant { height: 1px; }
+        .nov .bar.mukul { height: 1px; }
+
+        .dec .bar.prashant { height: 1px; }
+        .dec .bar.mukul { height: 1px; }
+
+        .dec .month-label {
+            color: #888888;
+        }
+  
