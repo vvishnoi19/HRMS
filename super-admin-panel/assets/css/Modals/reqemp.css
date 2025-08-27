@@ -29,12 +29,12 @@
      #addpayroll{
             justify-content: center !important;
         }
-        #delete-modal{
+        .modal-info{
              justify-content: center !important;
             
 
         }
-        #delete-modal .modal-container{
+        .modal-info .modal-container{
             height: fit-content;
         }
    .modal-container {
@@ -392,3 +392,16 @@
             }
         }
  
+
+        .description-info .description{
+            height: auto;
+        }
+        .delete-modal-header{
+            padding: 10px 10px;
+        }
+        .delete-modal-header .header-inner{
+            padding: 10px 20px;
+        }
+        #delete-modal .button-inner{
+            padding: 10px 10px;
+        }

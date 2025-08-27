@@ -256,7 +256,7 @@
             <div class="dropdown-section">
                  
                   <div class="dropdown-item" role="menuitem" tabindex="0" >
-                    <div class="dropdown-item-content">
+                    <div class="dropdown-item-content" data-open-modal="edit-payroll">
                         <div class="dropdown-item-text poppins">Edit Payroll</div>
                         <div class="dropdown-item-icon">
                             <!-- Eye icon -->
@@ -271,7 +271,7 @@
                         </div>
                     </div></div>
                
-                  <div class="dropdown-item" role="menuitem" tabindex="0" data-open-modal="delete-modal">
+                  <div class="dropdown-item" role="menuitem" tabindex="0" data-open-modal="delete-payroll-modal">
                     <div class="dropdown-item-content">
                         <div class="dropdown-item-text poppins">delete</div>
                         <div class="dropdown-item-icon">
@@ -439,7 +439,7 @@
 
 
 
-                        <button class="add-button"  data-open-modal="add-payroll">
+                        <button class="add-button"  data-open-modal="reimbursement-modal">
                             <span>+</span>
                             Create Reimbursements
                         </button>
@@ -567,7 +567,14 @@
         </button>
     <div class="dropdown-container" role="menu" aria-label="Actions menu" style="display: none;">
             <div class="dropdown-section">
-                 
+                  <div class="dropdown-item" role="menuitem" tabindex="0" >
+                    <div class="dropdown-item-content">
+                        <div class="dropdown-item-text poppins">Edit Bonus Encashments</div>
+                        <div class="dropdown-item-icon">
+                            <!-- Eye icon -->
+                        </div>
+                    </div>
+                </div>
                   <div class="dropdown-item" role="menuitem" tabindex="0" >
                     <div class="dropdown-item-content" data-open-modal="bonus-details">
                         <div class="dropdown-item-text poppins">View Bonus reimbursements</div>
@@ -576,17 +583,10 @@
                         </div>
                     </div>
                        </div>
-                       <div class="dropdown-item" role="menuitem" tabindex="0" >
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text poppins">Approve</div>
-                        <div class="dropdown-item-icon">
-                            <!-- Eye icon -->
-                        </div>
-                    </div>
-                </div>
+                      
                   <div class="dropdown-item" role="menuitem" tabindex="0" >
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text poppins">Reject</div>
+                    <div class="dropdown-item-content" data-open-modal="delete-bonus-modal">
+                        <div class="dropdown-item-text poppins">Delete Bonus Encashments</div>
                         <div class="dropdown-item-icon">
                             <!-- Eye icon -->
                         </div>
@@ -644,15 +644,10 @@
                         <span class="legend-text">Mukul Meena</span>
                     </div>
                 </div>
-                <div class="time-filter">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M5.33333 1.33333V4" stroke="#1E293B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M10.6667 1.33333V4" stroke="#1E293B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M12.6667 2.66667H3.33333C2.59695 2.66667 2 3.26362 2 4V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V4C14 3.26362 13.403 2.66667 12.6667 2.66667Z" stroke="#1E293B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 6.66667H14" stroke="#1E293B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    This Year
-                </div>
+                 <div class="calendar-wrapper">
+    <input type="text" class="fromDatePicker daterange" style="width:116px" placeholder="DD-MM-YYYY">
+    <input type="hidden" class="fromDate" name="from_date[]">
+</div>
             </div>
         </div>
         <div class="chart-content">
@@ -781,7 +776,7 @@
 
 
 
-                        <button class="add-button" data-open-modal="add-payroll">
+                        <button class="add-button" data-open-modal="add-incentive">
                             <span>+</span>
                             Add Incentives
                         </button>
@@ -847,7 +842,7 @@
         </div>
 
 
-            <div class="modal-overlay" id="delete-modal" data-modal-id="add-payroll" style="display: none;" data-close-on-click="true">
+            <div class="modal-overlay modal-info" id="add-payroll" data-modal-id="add-payroll" style="display: none;" data-close-on-click="true">
                <div class="modal-container">
         <!-- Header -->
         <div class="header">
@@ -986,12 +981,11 @@
         </div>
     </div>    
 </div>
-
-            <div class="modal-overlay" id="delete-modal" data-modal-id="bonus-modal" style="display: none;" data-close-on-click="true">
+            <div class="modal-overlay modal-info" id="edit-payroll" data-modal-id="edit-payroll" style="display: none;" data-close-on-click="true">
                <div class="modal-container">
         <!-- Header -->
         <div class="header">
-            <h1>Add Payroll</h1>
+            <h1>Edit Payroll</h1>
             <div class="close-icon" data-close-modal>
                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 6L6 18M6 6L18 18"/>
@@ -1004,6 +998,146 @@
             <!-- Employee Name -->
             <div class="form-group">
                 <label class="form-label" for="employee-name">Employee Name*</label>
+                <select class="form-select" id="edit-employee-name" name="employee-name" required>
+                    <option value="ayush-kumar">Ayush Kumar</option>
+                    <option value="john-doe">John Doe</option>
+                    <option value="jane-smith">Jane Smith</option>
+                </select>
+            </div>
+
+            <!-- Designation and Email -->
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label class="form-label" for="designation">Designation*</label>
+                        <select class="form-select" id="edit-designation" name="designation" required>
+                            <option value="ui-ux-designer">UI/UX Designer</option>
+                            <option value="developer">Developer</option>
+                            <option value="manager">Manager</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="email">Email*</label>
+                        <select class="form-select" id="edit-email" name="email" required>
+                            <option value="michelle.rivera@example.com">michelle.rivera@example.com</option>
+                            <option value="john.doe@example.com">john.doe@example.com</option>
+                            <option value="jane.smith@example.com">jane.smith@example.com</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Start Date and End Date -->
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label class="form-label" for="start-date">Start Date*</label>
+                        <div class="date-input">
+                            <input type="date" class="form-input" id="edit-start-date" name="start-date" value="2025-07-04" required>
+                            <div class="date-icon">
+                                <svg fill="none" viewBox="0 0 16 16" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M5.33333 1.33333V4"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M10.6667 1.33333V4"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M12.6667 2.66667H3.33333C2.59695 2.66667 2 3.26362 2 4V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V4C14 3.26362 13.403 2.66667 12.6667 2.66667Z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M2 6.66667H14"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="end-date">End Date*</label>
+                        <div class="date-input">
+                            <input type="date" class="form-input" id="edit-end-date" name="end-date" value="2025-07-04" required>
+                            <div class="date-icon">
+                                <svg fill="none" viewBox="0 0 16 16" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M5.33333 1.33333V4"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M10.6667 1.33333V4"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M12.6667 2.66667H3.33333C2.59695 2.66667 2 3.26362 2 4V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V4C14 3.26362 13.403 2.66667 12.6667 2.66667Z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M2 6.66667H14"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gross Pay and Deduction -->
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label class="form-label" for="gross-pay">Gross pay*</label>
+                        <input type="text" class="form-input" id="edit-gross-pay" name="gross-pay" value="₹ 25000.00" required>
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="deduction">Deduction*</label>
+                        <input type="text" class="form-input" id="edit-deduction" name="deduction" value="₹ 0.00" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Net Pay and Status -->
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label class="form-label" for="net-pay">Net pay*</label>
+                        <input type="text" class="form-input" id="edit-net-pay" name="net-pay" value="₹ 25000.00" required>
+                    </div>
+                    <div class="form-field status-field">
+                        <label class="form-label" for="status">Status</label>
+                        <select class="form-select" id="edit-status" name="status">
+                            <option value="paid">Paid</option>
+                            <option value="pending">Pending</option>
+                            <option value="unpaid">Unpaid</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attachment -->
+            <div class="form-group">
+                <label class="form-label" for="attachment">Attachment</label>
+                <div class="file-upload">
+                    <div class="file-input-wrapper">
+                        <input type="file" class="file-input" id="edit-attachment" name="attachment" onchange="updateFileName(this)">
+                        <div class="file-display" id="file-display">No file chosen</div>
+                    </div>
+                    <button type="button" class="upload-btn" onclick="document.getElementById('attachment').click()">
+                        <svg class="upload-icon" fill="none" viewBox="0 0 16 16" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M14 10V12.6667C14 13.0203 13.8595 13.3594 13.6095 13.6095C13.3594 13.8595 13.0203 14 12.6667 14H3.33333C2.97971 14 2.64057 13.8595 2.39052 13.6095C2.14048 13.3594 2 13.0203 2 12.6667V10"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M11.3333 5.33333L8 2L4.66667 5.33333"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M8 2V10"/>
+                        </svg>
+                        Upload
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Button Container -->
+        <div class="button-container">
+            <button type="button" class="btn btn-cancel" style="color: white;" data-close-modal>Cancel</button>
+            <button type="submit" class="btn btn-submit" >Submit</button>
+        </div>
+    </div>    
+</div>
+
+            <div class="modal-overlay modal-info" id="bonus-modal" data-modal-id="bonus-modal" style="display: none;" data-close-on-click="true">
+               <div class="modal-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Create Bonus Encashments</h1>
+            <div class="close-icon" data-close-modal>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 6L6 18M6 6L18 18"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Form Content -->
+        <form class="form-content">
+            <!-- Employee Name -->
+            <div class="form-group">
+                <label class="form-label" for="employee-name">Employee Name</label>
                 <select class="form-select" id="employee-name" name="employee-name" required>
                     <option value="ayush-kumar">Ayush Kumar</option>
                     <option value="john-doe">John Doe</option>
@@ -1023,8 +1157,8 @@
                         </select>
                     </div>
                     <div class="form-field">
-                        <label class="form-label" for="email">Email*</label>
-                        <select class="form-select" id="email" name="email" required>
+                        <label class="form-label" for="bonus-type">Bonus type</label>
+                        <select class="form-select" id="bonus-type" name="bonus-type" required>
                             <option value="michelle.rivera@example.com">michelle.rivera@example.com</option>
                             <option value="john.doe@example.com">john.doe@example.com</option>
                             <option value="jane.smith@example.com">jane.smith@example.com</option>
@@ -1033,13 +1167,13 @@
                 </div>
             </div>
 
-            <!-- Start Date and End Date -->
+        
             <div class="form-group">
                 <div class="form-row">
                     <div class="form-field">
-                        <label class="form-label" for="start-date">Start Date*</label>
+                        <label class="form-label" for="requestDate">Request Date</label>
                         <div class="date-input">
-                            <input type="date" class="form-input" id="start-date" name="start-date" value="2025-07-04" required>
+                            <input type="date" class="form-input" id="requestDate" name="request-date" value="2025-07-04" required>
                             <div class="date-icon">
                                 <svg fill="none" viewBox="0 0 16 16" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M5.33333 1.33333V4"/>
@@ -1050,93 +1184,182 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-field">
-                        <label class="form-label" for="end-date">End Date*</label>
-                        <div class="date-input">
-                            <input type="date" class="form-input" id="end-date" name="end-date" value="2025-07-04" required>
-                            <div class="date-icon">
-                                <svg fill="none" viewBox="0 0 16 16" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M5.33333 1.33333V4"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M10.6667 1.33333V4"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M12.6667 2.66667H3.33333C2.59695 2.66667 2 3.26362 2 4V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V4C14 3.26362 13.403 2.66667 12.6667 2.66667Z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M2 6.66667H14"/>
-                                </svg>
-                            </div>
-                        </div>
+                       <div class="form-field">
+                        <label class="form-label" for="amount">Amount</label>
+                        <input type="text" class="form-input" id="bounus-amount" name="amount" value="₹ 25000.00" required>
                     </div>
+                 
                 </div>
             </div>
 
-            <!-- Gross Pay and Deduction -->
+           
             <div class="form-group">
                 <div class="form-row">
-                    <div class="form-field">
-                        <label class="form-label" for="gross-pay">Gross pay*</label>
-                        <input type="text" class="form-input" id="gross-pay" name="gross-pay" value="₹ 25000.00" required>
-                    </div>
-                    <div class="form-field">
-                        <label class="form-label" for="deduction">Deduction*</label>
-                        <input type="text" class="form-input" id="deduction" name="deduction" value="₹ 0.00" required>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Net Pay and Status -->
-            <div class="form-group">
-                <div class="form-row">
-                    <div class="form-field">
-                        <label class="form-label" for="net-pay">Net pay*</label>
-                        <input type="text" class="form-input" id="net-pay" name="net-pay" value="₹ 25000.00" required>
-                    </div>
-                    <div class="form-field status-field">
+                      <div class="form-field">
                         <label class="form-label" for="status">Status</label>
-                        <select class="form-select" id="status" name="status">
-                            <option value="paid">Paid</option>
+                        <select class="form-select" id="modal-status" name="status" required>
                             <option value="pending">Pending</option>
-                            <option value="unpaid">Unpaid</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
                         </select>
                     </div>
-                </div>
+                      <div class="form-field">
+                        <label class="form-label" for="approved-by">Approved By</label>
+                        <input type="text" class="form-input" id="approvedBy" name="approved-by" required>
+                    </div>
+                    </div>
+               
+               
+                  
+                
+
             </div>
 
-            <!-- Attachment -->
+          
+            <!-- description -->
             <div class="form-group">
-                <label class="form-label" for="attachment">Attachment</label>
-                <div class="file-upload">
-                    <div class="file-input-wrapper">
-                        <input type="file" class="file-input" id="attachment" name="attachment" onchange="updateFileName(this)">
-                        <div class="file-display" id="file-display">No file chosen</div>
+            
+                    <div class="form-field description-info">
+                        <label class="form-label" for="bonus-description">Description</label>
+                         <textarea name="description" class="form-input description" id="bonus-description" rows="4"></textarea>
                     </div>
-                    <button type="button" class="upload-btn" onclick="document.getElementById('attachment').click()">
-                        <svg class="upload-icon" fill="none" viewBox="0 0 16 16" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M14 10V12.6667C14 13.0203 13.8595 13.3594 13.6095 13.6095C13.3594 13.8595 13.0203 14 12.6667 14H3.33333C2.97971 14 2.64057 13.8595 2.39052 13.6095C2.14048 13.3594 2 13.0203 2 12.6667V10"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M11.3333 5.33333L8 2L4.66667 5.33333"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M8 2V10"/>
-                        </svg>
-                        Upload
-                    </button>
-                </div>
+               
             </div>
+
+          
         </form>
 
         <!-- Button Container -->
         <div class="button-container">
-            <button type="button" class="btn btn-cancel" data-close-modal>Cancel</button>
+            <button type="button" class="btn btn-cancel" style="color:white"  data-close-modal>Cancel</button>
+            <button type="submit" class="btn btn-submit" style="color:white"  >Submit</button>
+        </div>
+    </div>    
+</div>
+            <div class="modal-overlay modal-info" id="reimbursement-modal" data-modal-id="reimbursement-modal" style="display: none;" data-close-on-click="true">
+               <div class="modal-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Create Reimbursement
+            </h1>
+            <div class="close-icon" data-close-modal>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 6L6 18M6 6L18 18"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Form Content -->
+        <form class="form-content">
+            <!-- Employee Name -->
+            <div class="form-group">
+                <label class="form-label" for="employee-name">Employee Name</label>
+                <select class="form-select" id="reimbursement-employee-name" name="employee-name" required>
+                    <option value="ayush-kumar">Ayush Kumar</option>
+                    <option value="john-doe">John Doe</option>
+                    <option value="jane-smith">Jane Smith</option>
+                </select>
+            </div>
+
+            <!-- Designation and Email -->
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label class="form-label" for="designation">Designation*</label>
+                        <select class="form-select" id="reimbursements-designation" name="designation" required>
+                            <option value="ui-ux-designer">UI/UX Designer</option>
+                            <option value="developer">Developer</option>
+                            <option value="manager">Manager</option>
+                        </select>
+                    </div>
+                        <div class="form-field">
+                        <label class="form-label" for="reimbursement-title">Title</label>
+                        <input type="text" class="form-input" id="reimbursementTitle" name="title"  required>
+                    </div>
+                  
+                </div>
+            </div>
+
+        
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label class="form-label" for="requestDate">Request Date</label>
+                        <div class="date-input">
+                            <input type="date" class="form-input" id="reimbursement-requestDate" name="request-date" value="2025-07-04" required>
+                            <div class="date-icon">
+                                <svg fill="none" viewBox="0 0 16 16" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M5.33333 1.33333V4"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M10.6667 1.33333V4"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M12.6667 2.66667H3.33333C2.59695 2.66667 2 3.26362 2 4V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V4C14 3.26362 13.403 2.66667 12.6667 2.66667Z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M2 6.66667H14"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                       <div class="form-field">
+                        <label class="form-label" for="reimbursement-amount">Amount</label>
+                        <input type="text" class="form-input" id="reimbursement-amount" name="amount" value="₹ 25000.00" required>
+                    </div>
+                 
+                </div>
+            </div>
+
+           
+            <div class="form-group">
+                <div class="form-row">
+                      <div class="form-field">
+                        <label class="form-label" for="reimbursement-status">Status</label>
+                        <select class="form-select" id="reimbursement-modal-status" name="status" required>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                      <div class="form-field">
+                        <label class="form-label" for="approved-by">Approved By</label>
+                        <input type="text" class="form-input" id="reimbursement-approvedBy" name="approved-by" required>
+                    </div>
+                    </div>
+               
+               
+                  
+                
+
+            </div>
+
+          
+            <!-- description -->
+            <div class="form-group">
+            
+                    <div class="form-field description-info">
+                        <label class="form-label" for="reimbursement-description">Description</label>
+                         <textarea name="description" class="form-input description" id="reimbursement-description" rows="4"></textarea>
+                    </div>
+               
+            </div>
+
+          
+        </form>
+
+        <!-- Button Container -->
+        <div class="button-container">
+            <button type="button" class="btn btn-cancel" style="color:white"  data-close-modal>Cancel</button>
             <button type="submit" class="btn btn-submit" >Submit</button>
         </div>
     </div>    
 </div>
 
 
-<div class="modal-overlay" id="delete-modal" data-modal-id="delete-modal" style="display: none;" data-close-on-click="true">
+<div class="modal-overlay modal-info" id="delete-payroll-modal" data-modal-id="delete-payroll-modal" style="display: none;" data-close-on-click="true">
            <div class="modal-container">
         <div class="modal">
             <!-- Header -->
-            <div class="header">
+            <div class="delete-modal-header header">
                 <div class="header-content">
                     <div class="header-inner">
                         <div class="header-title">
-                            Delete Role
+                            Delete PayRoll
                         </div>
                         <div class="close-icon" data-close-modal>
                             <svg fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
@@ -1150,13 +1373,13 @@
             </div>
 
             <!-- Divider -->
-            <div class="divider">
+            <!-- <div class="divider">
                 <div class="divider-line">
                     <svg fill="none" preserveAspectRatio="none" viewBox="0 0 600 1">
                         <line stroke="#E2E8F0" x2="600" y1="0.5" y2="0.5"/>
                     </svg>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Message Container -->
             <div class="message-container">
@@ -1174,14 +1397,78 @@
                 </div>
             </div>
 
+
+            <!-- Button Container -->
+            <div class="button-container">
+                <div class="button-content">
+                    <div class="button-inner">
+                        <button class="button cancel-button" data-close-modal   >
+                            <div class="button-wrap">
+                                <div class="cancel-button-text">
+                                    Cancel
+                                </div>
+                            </div>
+                        </button>
+                        <button class="button delete-button">
+                            <div class="button-wrap">
+                                <div class="delete-button-text">
+                                    Yes, Delete
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<div class="modal-overlay modal-info" id="delete-bonus-modal" data-modal-id="delete-bonus-modal" style="display: none;" data-close-on-click="true">
+           <div class="modal-container">
+        <div class="modal">
+            <!-- Header -->
+            <div class="delete-modal-header header">
+                <div class="header-content">
+                    <div class="header-inner">
+                        <div class="header-title">
+                            Delete Bonus Encashments
+                        </div>
+                        <div class="close-icon" data-close-modal>
+                            <svg fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+                                <g>
+                                    <path d="M18 6L6 18M6 6L18 18" stroke="#334155" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Divider -->
-            <div class="divider">
+            <!-- <div class="divider">
                 <div class="divider-line">
                     <svg fill="none" preserveAspectRatio="none" viewBox="0 0 600 1">
                         <line stroke="#E2E8F0" x2="600" y1="0.5" y2="0.5"/>
                     </svg>
                 </div>
+            </div> -->
+
+            <!-- Message Container -->
+            <div class="message-container">
+                <div class="message-content">
+                    <div class="message-inner">
+                        <div class="message-text-container">
+                            <div class="message-title">
+                                Are you sure you want to delete this role?
+                            </div>
+                            <div class="message-subtitle">
+                                This action cannot be undone.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
 
             <!-- Button Container -->
             <div class="button-container">
@@ -1209,8 +1496,7 @@
     </div>
 
 
-
-     <div  class="modal-overlay" data-modal-id="details" style="display: none;" data-close-on-click="true">
+     <div  class="modal-overlay" id="leave-details" data-modal-id="details" style="display: none;" data-close-on-click="true">
      <div class="modal-container">
         <!-- Header -->
         <div class="modal-header">
@@ -1265,12 +1551,37 @@
                     </div>
 
                     
-                    <!-- Description -->
-                    <div class="info-description">
-                        <div class="info-label">Description</div>
-                        <div class="info-value">Request for Attendance: I would like to formally request attendance for the upcoming client site visit scheduled for next week. This visit is crucial for our ongoing project and will provide an opportunity to strengthen our relationship with the client. Please let me know if you need any further details.</div>
+                    <div id="reimbursement-details-document" class="info-document">
+                        <div class="info-label">Document Attached</div>
+                        <div class="file-container">
+                            <div class="file-info">
+                                <svg class="pdf-icon" fill="none" viewBox="0 0 32 32">
+                                    <path d="M8 0C6.9 0 6 0.9 6 2V30C6 31.1 6.9 32 8 32H28C29.1 32 30 31.1 30 30V8L22 0H8Z" fill="#E2E5E7"/>
+                                    <path d="M24 8H30L22 0V6C22 7.1 22.9 8 24 8Z" fill="#B0B7BD"/>
+                                    <path d="M30 14L24 8H30V14Z" fill="#CAD1D8"/>
+                                    <path d="M26 26C26 26.55 25.55 27 25 27H3C2.45 27 2 26.55 2 26V16C2 15.45 2.45 15 3 15H25C25.55 15 26 15.45 26 16V26Z" fill="#F15642"/>
+                                    <path d="M6.36235 18.9463C6.36235 18.6823 6.57035 18.3943 6.90535 18.3943H8.75235C9.79235 18.3943 10.7284 19.0903 10.7284 20.4243C10.7284 21.6883 9.79235 22.3923 8.75235 22.3923H7.41735V23.4483C7.41735 23.8003 7.19335 23.9993 6.90535 23.9993C6.64135 23.9993 6.36235 23.8003 6.36235 23.4483V18.9463ZM7.41735 19.4013V21.3933H8.75235C9.28835 21.3933 9.71235 20.9203 9.71235 20.4243C9.71235 19.8653 9.28835 19.4013 8.75235 19.4013H7.41735Z" fill="white"/>
+                                    <path d="M12.2931 23.9986C12.0291 23.9986 11.7411 23.8546 11.7411 23.5036V18.9616C11.7411 18.6746 12.0291 18.4656 12.2931 18.4656H14.1241C17.7781 18.4656 17.6981 23.9986 14.1961 23.9986H12.2931ZM12.7971 19.4416V23.0236H14.1241C16.2831 23.0236 16.3791 19.4416 14.1241 19.4416H12.7971Z" fill="white"/>
+                                    <path d="M18.9955 19.5066V20.7776H21.0345C21.3225 20.7776 21.6105 21.0656 21.6105 21.3446C21.6105 21.6086 21.3225 21.8246 21.0345 21.8246H18.9955V23.5036C18.9955 23.7836 18.7965 23.9986 18.5165 23.9986C18.1645 23.9986 17.9495 23.7836 17.9495 23.5036V18.9616C17.9495 18.6746 18.1655 18.4656 18.5165 18.4656H21.3235C21.6755 18.4656 21.8835 18.6746 21.8835 18.9616C21.8835 19.2176 21.6755 19.5056 21.3235 19.5056H18.9955V19.5066Z" fill="white"/>
+                                    <path d="M25 27H6V28H25C25.55 28 26 27.55 26 27V26C26 26.55 25.55 27 25 27Z" fill="#CAD1D8"/>
+                                </svg>
+                                <div class="file-details">
+                                    <div class="file-name">Download Certificate.pdf</div>
+                                    <div class="file-size">5 MB</div>
+                                </div>
+                            </div>
+                            <svg class="download-icon" fill="none" viewBox="0 0 16 16" onclick="downloadFile()">
+                                <mask fill="white" id="path-1-inside-1_21_1142">
+                                    <path d="M6.58535 12.0813C6.77109 12.2672 6.99162 12.4146 7.23436 12.5152C7.47709 12.6158 7.73727 12.6676 8.00002 12.6676C8.26277 12.6676 8.52295 12.6158 8.76568 12.5152C9.00842 12.4146 9.22895 12.2672 9.41469 12.0813L11.5554 9.94067C11.6701 9.81373 11.7317 9.64752 11.7273 9.47644C11.7229 9.30536 11.6529 9.14253 11.5318 9.02165C11.4106 8.90077 11.2476 8.8311 11.0765 8.82707C10.9055 8.82304 10.7394 8.88496 10.6127 9L8.66202 10.9513L8.66669 0.666667C8.66669 0.489856 8.59645 0.320286 8.47142 0.195262C8.3464 0.0702379 8.17683 0 8.00002 0C7.82321 0 7.65364 0.0702379 7.52862 0.195262C7.40359 0.320286 7.33335 0.489856 7.33335 0.666667L7.32735 10.9387L5.38735 9C5.26226 8.875 5.09263 8.8048 4.91578 8.80487C4.73894 8.80493 4.56936 8.87524 4.44435 9.00033C4.31935 9.12543 4.24916 9.29506 4.24922 9.4719C4.24928 9.64875 4.31959 9.81833 4.44469 9.94333L6.58535 12.0813Z"/>
+                                </mask>
+                                <path d="M6.58535 12.0813C6.77109 12.2672 6.99162 12.4146 7.23436 12.5152C7.47709 12.6158 7.73727 12.6676 8.00002 12.6676C8.26277 12.6676 8.52295 12.6158 8.76568 12.5152C9.00842 12.4146 9.22895 12.2672 9.41469 12.0813L11.5554 9.94067C11.6701 9.81373 11.7317 9.64752 11.7273 9.47644C11.7229 9.30536 11.6529 9.14253 11.5318 9.02165C11.4106 8.90077 11.2476 8.8311 11.0765 8.82707C10.9055 8.82304 10.7394 8.88496 10.6127 9L8.66202 10.9513L8.66669 0.666667C8.66669 0.489856 8.59645 0.320286 8.47142 0.195262C8.3464 0.0702379 8.17683 0 8.00002 0C7.82321 0 7.65364 0.0702379 7.52862 0.195262C7.40359 0.320286 7.33335 0.489856 7.33335 0.666667L7.32735 10.9387L5.38735 9C5.26226 8.875 5.09263 8.8048 4.91578 8.80487C4.73894 8.80493 4.56936 8.87524 4.44435 9.00033C4.31935 9.12543 4.24916 9.29506 4.24922 9.4719C4.24928 9.64875 4.31959 9.81833 4.44469 9.94333L6.58535 12.0813Z" fill="#475569"/>
+                                <mask fill="white" id="path-3-inside-2_21_1142">
+                                    <path d="M15.3333 10.6668C15.1565 10.6668 14.987 10.737 14.8619 10.8621C14.7369 10.9871 14.6667 11.1567 14.6667 11.3335V14.0001C14.6667 14.1769 14.5964 14.3465 14.4714 14.4715C14.3464 14.5966 14.1768 14.6668 14 14.6668H2C1.82319 14.6668 1.65362 14.5966 1.5286 14.4715C1.40357 14.3465 1.33333 14.1769 1.33333 14.0001V11.3335C1.33333 11.1567 1.2631 10.9871 1.13807 10.8621C1.01305 10.737 0.843478 10.6668 0.666667 10.6668C0.489856 10.6668 0.320286 10.737 0.195262 10.8621C0.0702379 10.9871 0 11.1567 0 11.3335L0 14.0001C0 14.5306 0.210714 15.0393 0.585786 15.4143C0.960859 15.7894 1.46957 16.0001 2 16.0001H14C14.5304 16.0001 15.0391 15.7894 15.4142 15.4143C15.7893 15.0393 16 14.5306 16 14.0001V11.3335C16 11.1567 15.9298 10.9871 15.8047 10.8621C15.6797 10.737 15.5101 10.6668 15.3333 10.6668Z"/>
+                                </mask>
+                                <path d="M15.3333 10.6668C15.1565 10.6668 14.987 10.737 14.8619 10.8621C14.7369 10.9871 14.6667 11.1567 14.6667 11.3335V14.0001C14.6667 14.1769 14.5964 14.3465 14.4714 14.4715C14.3464 14.5966 14.1768 14.6668 14 14.6668H2C1.82319 14.6668 1.65362 14.5966 1.5286 14.4715C1.40357 14.3465 1.33333 14.1769 1.33333 14.0001V11.3335C1.33333 11.1567 1.2631 10.9871 1.13807 10.8621C1.01305 10.737 0.843478 10.6668 0.666667 10.6668C0.489856 10.6668 0.320286 10.737 0.195262 10.8621C0.0702379 10.9871 0 11.1567 0 11.3335L0 14.0001C0 14.5306 0.210714 15.0393 0.585786 15.4143C0.960859 15.7894 1.46957 16.0001 2 16.0001H14C14.5304 16.0001 15.0391 15.7894 15.4142 15.4143C15.7893 15.0393 16 14.5306 16 14.0001V11.3335C16 11.1567 15.9298 10.9871 15.8047 10.8621C15.6797 10.737 15.5101 10.6668 15.3333 10.6668Z" fill="#475569"/>
+                            </svg>
+                        </div>
                     </div>
-
                  
                 </div>
             </div>
@@ -1302,12 +1613,12 @@
         </div>
     </div>
 </div>
-     <div  class="modal-overlay" data-modal-id="bonus-details" style="display: none;" data-close-on-click="true">
+     <div  class="modal-overlay"id="bonus-details" data-modal-id="bonus-details" style="display: none;" data-close-on-click="true">
      <div class="modal-container">
         <!-- Header -->
         <div class="modal-header">
             <div class="header-content">
-                <div class="header-title">Leave Details</div>
+                <div class="header-title">Bonus Encashments Details</div>
                 <button class="close-button" data-close-modal>
                     <svg class="close-icon" fill="none" viewBox="0 0 16 16">
                         <path d="M12.8534 12.1462C12.8998 12.1927 12.9367 12.2478 12.9618 12.3085C12.987 12.3692 12.9999 12.4343 12.9999 12.5C12.9999 12.5657 12.987 12.6307 12.9618 12.6914C12.9367 12.7521 12.8998 12.8073 12.8534 12.8537C12.8069 12.9002 12.7518 12.937 12.6911 12.9622C12.6304 12.9873 12.5653 13.0003 12.4996 13.0003C12.4339 13.0003 12.3689 12.9873 12.3082 12.9622C12.2475 12.937 12.1923 12.9002 12.1459 12.8537L7.99963 8.70687L3.85338 12.8537C3.75956 12.9476 3.63231 13.0003 3.49963 13.0003C3.36694 13.0003 3.2397 12.9476 3.14588 12.8537C3.05206 12.7599 2.99935 12.6327 2.99935 12.5C2.99935 12.3673 3.05206 12.2401 3.14588 12.1462L7.29275 7.99999L3.14588 3.85374C3.05206 3.75992 2.99935 3.63268 2.99935 3.49999C2.99935 3.36731 3.05206 3.24006 3.14588 3.14624C3.2397 3.05242 3.36694 2.99972 3.49963 2.99972C3.63231 2.99972 3.75956 3.05242 3.85338 3.14624L7.99963 7.29312L12.1459 3.14624C12.2397 3.05242 12.3669 2.99972 12.4996 2.99972C12.6323 2.99972 12.7596 3.05242 12.8534 3.14624C12.9472 3.24006 12.9999 3.36731 12.9999 3.49999C12.9999 3.63268 12.9472 3.75992 12.8534 3.85374L8.7065 7.99999L12.8534 12.1462Z" fill="#1B1B1B"/>
@@ -1357,10 +1668,36 @@
                     </div>
 
                     
-                    <!-- Description -->
-                    <div class="info-description">
-                        <div class="info-label">Description</div>
-                        <div class="info-value">Request for Attendance: I would like to formally request attendance for the upcoming client site visit scheduled for next week. This visit is crucial for our ongoing project and will provide an opportunity to strengthen our relationship with the client. Please let me know if you need any further details.</div>
+                    <div id="bonus-details-document" class="info-document">
+                        <div class="info-label">Document Attached</div>
+                        <div class="file-container">
+                            <div class="file-info">
+                                <svg class="pdf-icon" fill="none" viewBox="0 0 32 32">
+                                    <path d="M8 0C6.9 0 6 0.9 6 2V30C6 31.1 6.9 32 8 32H28C29.1 32 30 31.1 30 30V8L22 0H8Z" fill="#E2E5E7"/>
+                                    <path d="M24 8H30L22 0V6C22 7.1 22.9 8 24 8Z" fill="#B0B7BD"/>
+                                    <path d="M30 14L24 8H30V14Z" fill="#CAD1D8"/>
+                                    <path d="M26 26C26 26.55 25.55 27 25 27H3C2.45 27 2 26.55 2 26V16C2 15.45 2.45 15 3 15H25C25.55 15 26 15.45 26 16V26Z" fill="#F15642"/>
+                                    <path d="M6.36235 18.9463C6.36235 18.6823 6.57035 18.3943 6.90535 18.3943H8.75235C9.79235 18.3943 10.7284 19.0903 10.7284 20.4243C10.7284 21.6883 9.79235 22.3923 8.75235 22.3923H7.41735V23.4483C7.41735 23.8003 7.19335 23.9993 6.90535 23.9993C6.64135 23.9993 6.36235 23.8003 6.36235 23.4483V18.9463ZM7.41735 19.4013V21.3933H8.75235C9.28835 21.3933 9.71235 20.9203 9.71235 20.4243C9.71235 19.8653 9.28835 19.4013 8.75235 19.4013H7.41735Z" fill="white"/>
+                                    <path d="M12.2931 23.9986C12.0291 23.9986 11.7411 23.8546 11.7411 23.5036V18.9616C11.7411 18.6746 12.0291 18.4656 12.2931 18.4656H14.1241C17.7781 18.4656 17.6981 23.9986 14.1961 23.9986H12.2931ZM12.7971 19.4416V23.0236H14.1241C16.2831 23.0236 16.3791 19.4416 14.1241 19.4416H12.7971Z" fill="white"/>
+                                    <path d="M18.9955 19.5066V20.7776H21.0345C21.3225 20.7776 21.6105 21.0656 21.6105 21.3446C21.6105 21.6086 21.3225 21.8246 21.0345 21.8246H18.9955V23.5036C18.9955 23.7836 18.7965 23.9986 18.5165 23.9986C18.1645 23.9986 17.9495 23.7836 17.9495 23.5036V18.9616C17.9495 18.6746 18.1655 18.4656 18.5165 18.4656H21.3235C21.6755 18.4656 21.8835 18.6746 21.8835 18.9616C21.8835 19.2176 21.6755 19.5056 21.3235 19.5056H18.9955V19.5066Z" fill="white"/>
+                                    <path d="M25 27H6V28H25C25.55 28 26 27.55 26 27V26C26 26.55 25.55 27 25 27Z" fill="#CAD1D8"/>
+                                </svg>
+                                <div class="file-details">
+                                    <div class="file-name">Download Certificate.pdf</div>
+                                    <div class="file-size">5 MB</div>
+                                </div>
+                            </div>
+                            <svg class="download-icon" fill="none" viewBox="0 0 16 16" onclick="downloadFile()">
+                                <mask fill="white" id="path-1-inside-1_21_1142">
+                                    <path d="M6.58535 12.0813C6.77109 12.2672 6.99162 12.4146 7.23436 12.5152C7.47709 12.6158 7.73727 12.6676 8.00002 12.6676C8.26277 12.6676 8.52295 12.6158 8.76568 12.5152C9.00842 12.4146 9.22895 12.2672 9.41469 12.0813L11.5554 9.94067C11.6701 9.81373 11.7317 9.64752 11.7273 9.47644C11.7229 9.30536 11.6529 9.14253 11.5318 9.02165C11.4106 8.90077 11.2476 8.8311 11.0765 8.82707C10.9055 8.82304 10.7394 8.88496 10.6127 9L8.66202 10.9513L8.66669 0.666667C8.66669 0.489856 8.59645 0.320286 8.47142 0.195262C8.3464 0.0702379 8.17683 0 8.00002 0C7.82321 0 7.65364 0.0702379 7.52862 0.195262C7.40359 0.320286 7.33335 0.489856 7.33335 0.666667L7.32735 10.9387L5.38735 9C5.26226 8.875 5.09263 8.8048 4.91578 8.80487C4.73894 8.80493 4.56936 8.87524 4.44435 9.00033C4.31935 9.12543 4.24916 9.29506 4.24922 9.4719C4.24928 9.64875 4.31959 9.81833 4.44469 9.94333L6.58535 12.0813Z"/>
+                                </mask>
+                                <path d="M6.58535 12.0813C6.77109 12.2672 6.99162 12.4146 7.23436 12.5152C7.47709 12.6158 7.73727 12.6676 8.00002 12.6676C8.26277 12.6676 8.52295 12.6158 8.76568 12.5152C9.00842 12.4146 9.22895 12.2672 9.41469 12.0813L11.5554 9.94067C11.6701 9.81373 11.7317 9.64752 11.7273 9.47644C11.7229 9.30536 11.6529 9.14253 11.5318 9.02165C11.4106 8.90077 11.2476 8.8311 11.0765 8.82707C10.9055 8.82304 10.7394 8.88496 10.6127 9L8.66202 10.9513L8.66669 0.666667C8.66669 0.489856 8.59645 0.320286 8.47142 0.195262C8.3464 0.0702379 8.17683 0 8.00002 0C7.82321 0 7.65364 0.0702379 7.52862 0.195262C7.40359 0.320286 7.33335 0.489856 7.33335 0.666667L7.32735 10.9387L5.38735 9C5.26226 8.875 5.09263 8.8048 4.91578 8.80487C4.73894 8.80493 4.56936 8.87524 4.44435 9.00033C4.31935 9.12543 4.24916 9.29506 4.24922 9.4719C4.24928 9.64875 4.31959 9.81833 4.44469 9.94333L6.58535 12.0813Z" fill="#475569"/>
+                                <mask fill="white" id="path-3-inside-2_21_1142">
+                                    <path d="M15.3333 10.6668C15.1565 10.6668 14.987 10.737 14.8619 10.8621C14.7369 10.9871 14.6667 11.1567 14.6667 11.3335V14.0001C14.6667 14.1769 14.5964 14.3465 14.4714 14.4715C14.3464 14.5966 14.1768 14.6668 14 14.6668H2C1.82319 14.6668 1.65362 14.5966 1.5286 14.4715C1.40357 14.3465 1.33333 14.1769 1.33333 14.0001V11.3335C1.33333 11.1567 1.2631 10.9871 1.13807 10.8621C1.01305 10.737 0.843478 10.6668 0.666667 10.6668C0.489856 10.6668 0.320286 10.737 0.195262 10.8621C0.0702379 10.9871 0 11.1567 0 11.3335L0 14.0001C0 14.5306 0.210714 15.0393 0.585786 15.4143C0.960859 15.7894 1.46957 16.0001 2 16.0001H14C14.5304 16.0001 15.0391 15.7894 15.4142 15.4143C15.7893 15.0393 16 14.5306 16 14.0001V11.3335C16 11.1567 15.9298 10.9871 15.8047 10.8621C15.6797 10.737 15.5101 10.6668 15.3333 10.6668Z"/>
+                                </mask>
+                                <path d="M15.3333 10.6668C15.1565 10.6668 14.987 10.737 14.8619 10.8621C14.7369 10.9871 14.6667 11.1567 14.6667 11.3335V14.0001C14.6667 14.1769 14.5964 14.3465 14.4714 14.4715C14.3464 14.5966 14.1768 14.6668 14 14.6668H2C1.82319 14.6668 1.65362 14.5966 1.5286 14.4715C1.40357 14.3465 1.33333 14.1769 1.33333 14.0001V11.3335C1.33333 11.1567 1.2631 10.9871 1.13807 10.8621C1.01305 10.737 0.843478 10.6668 0.666667 10.6668C0.489856 10.6668 0.320286 10.737 0.195262 10.8621C0.0702379 10.9871 0 11.1567 0 11.3335L0 14.0001C0 14.5306 0.210714 15.0393 0.585786 15.4143C0.960859 15.7894 1.46957 16.0001 2 16.0001H14C14.5304 16.0001 15.0391 15.7894 15.4142 15.4143C15.7893 15.0393 16 14.5306 16 14.0001V11.3335C16 11.1567 15.9298 10.9871 15.8047 10.8621C15.6797 10.737 15.5101 10.6668 15.3333 10.6668Z" fill="#475569"/>
+                            </svg>
+                        </div>
                     </div>
 
                  
@@ -1373,6 +1710,95 @@
 </div>
 
 
+
+
+
+
+            <div class="modal-overlay modal-info" id="incentive-modal" data-modal-id="add-incentive" style="display: none;" data-close-on-click="true">
+               <div class="modal-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Add incentive</h1>
+            <div class="close-icon" data-close-modal>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 6L6 18M6 6L18 18"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Form Content -->
+        <form class="form-content">
+            <!-- Employee Name -->
+            <div class="form-group">
+                <label class="form-label" for="employee-name">Employee Name*</label>
+                <select class="form-select" id="incentive-employee-name" name="employee-name" required>
+                    <option value="ayush-kumar">Ayush Kumar</option>
+                    <option value="john-doe">John Doe</option>
+                    <option value="jane-smith">Jane Smith</option>
+                </select>
+            </div>
+
+            <!-- Designation and Email -->
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label class="form-label" for="achieved">Achieved</label>
+                      <input type="number" class="form-input" for="incentive-achieved" id="Num-Achieved" required>
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="email">Achieved %</label>
+                        <input type="number" class="form-input" name="achieved" id="Per-Achieved" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Start Date and End Date -->
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label class="form-label" for="Month">Month</label>
+                        <div class="date-input">
+                            <input type="date" class="form-input" id="incentive-month" name="month" value="2025-07-04" required>
+                            <div class="date-icon">
+                                <svg fill="none" viewBox="0 0 16 16" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M5.33333 1.33333V4"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M10.6667 1.33333V4"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M12.6667 2.66667H3.33333C2.59695 2.66667 2 3.26362 2 4V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V4C14 3.26362 13.403 2.66667 12.6667 2.66667Z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M2 6.66667H14"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+
+            <!-- Gross Pay and Deduction -->
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label class="form-label" for="incentiveEarned">Incetive Earned</label>
+                        <input type="number" class="form-input" id="incentiveEarned" name="incentive-earned" value="₹ 25000.00" required>
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="target">Target</label>
+                        <input type="number" class="form-input" id="incentiveTarget" name="target" value="₹120000.00" required>
+                    </div>
+                </div>
+            </div>
+
+        
+
+    
+        </form>
+
+        <!-- Button Container -->
+        <div class="button-container">
+            <button type="button" class="btn btn-cancel" style="color: white;" data-close-modal>Cancel</button>
+            <button type="submit" class="btn btn-submit" style="color: white;" >Submit</button>
+        </div>
+    </div>    
+</div>
 
 
     </div>
@@ -1444,7 +1870,9 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script src="./assets/js/svg-img.js"></script>
+        <script src="./assets/js/calendar.js"></script>
     <script src="./assets/js/calendar2.js"></script>
+
     <script src="./assets/js/dropdown.js"></script>
  <script src="./assets/js/modal.js"></script>
 </body>

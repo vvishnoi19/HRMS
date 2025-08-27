@@ -192,16 +192,11 @@
 
             <div class="right-controls">
                 <!-- Date Picker -->
-                <div class="date-picker-container">
-                  <div class="date-picker">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <path d="M5.33333 1.33333V4M10.6667 1.33333V4M2 6.66667H14M3.33333 3.33333H12.6667C13.403 3.33333 14 3.93029 14 4.66667V13.3333C14 14.0697 13.403 14.6667 12.6667 14.6667H3.33333C2.59695 14.6667 2 14.0697 2 13.3333V4.66667C2 3.93029 2.59695 3.33333 3.33333 3.33333Z"
-              stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <span class="selected-date">This year</span>
+                                         <div class="calendar-wrapper">
+    <input type="text" class="daterange" placeholder="DD-MM-YYYY — DD-MM-YYYY">
+    <input type="hidden" class="startDate" name="start_date[]">
+    <input type="hidden" class="endDate" name="end_date[]">
 </div>
-<div class="calendar-popup hidden"></div>
-                </div>
 
                 <!-- Add Announcement Button -->
                 <button class="add-button" onclick="openModal()">
@@ -1174,27 +1169,19 @@
                         <!-- From Date -->
                         <div class="date-picker">
                             <div class="label-text">From*</div>
-                            <div class="date-picker">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <path d="M5.33333 1.33333V4M10.6667 1.33333V4M2 6.66667H14M3.33333 3.33333H12.6667C13.403 3.33333 14 3.93029 14 4.66667V13.3333C14 14.0697 13.403 14.6667 12.6667 14.6667H3.33333C2.59695 14.6667 2 14.0697 2 13.3333V4.66667C2 3.93029 2.59695 3.33333 3.33333 3.33333Z"
-              stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <span class="selected-date">This year</span>
+                                 <div class="calendar-wrapper">
+    <input type="text" class="fromDatePicker daterange" style="width:200px" placeholder="DD-MM-YYYY">
+    <input type="hidden" class="fromDate" name="from_date[]">
 </div>
-<div class="calendar-popup hidden"></div>
                         </div>
 
                         <!-- To Date -->
                         <div class="date-picker">
                             <div class="label-text">To*</div>
-                          <div class="date-picker">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <path d="M5.33333 1.33333V4M10.6667 1.33333V4M2 6.66667H14M3.33333 3.33333H12.6667C13.403 3.33333 14 3.93029 14 4.66667V13.3333C14 14.0697 13.403 14.6667 12.6667 14.6667H3.33333C2.59695 14.6667 2 14.0697 2 13.3333V4.66667C2 3.93029 2.59695 3.33333 3.33333 3.33333Z"
-              stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <span class="selected-date">This year</span>
+                                   <div class="calendar-wrapper" >
+    <input type="text" class="fromDatePicker daterange" style="width:200px" placeholder="DD-MM-YYYY">
+    <input type="hidden" class="fromDate" name="from_date[]">
 </div>
-<div class="calendar-popup hidden"></div>
                         </div>
                     </div>
 
@@ -1203,14 +1190,19 @@
                         <div class="input-label">
                             <div class="label-text">Status</div>
                         </div>
-                        <div class="select-field" onclick="handleStatusSelect()">
-                            <div class="select-inner">
-                                <div class="select-text" id="statusText">Active</div>
-                                <svg class="chevron-icon" fill="none" viewBox="0 0 16 16">
-                                    <path d="M4 6L8 10L12 6" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </div>
+                               <div class="filter-dropdown-wrapper" style="width:100%">
+    <div class="filter-dropdown" onclick="toggleDropdown(this)">
+        <span>Active</span>
+        <svg class="chevron-down" viewBox="0 0 16 16" fill="none">
+            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.33333"/>
+        </svg>
+    </div>
+    <div class="dropdown-options hidden" style="width: 100%;">
+        <div class="option">Name</div>
+        <div class="option">Date</div>
+        <div class="option">Performance</div>
+    </div>
+</div>
                     </div>
                 </form>
             </div>
@@ -1495,10 +1487,16 @@ function closeDeleteModal() {
 
         
         
+
     </script>
+     
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+
+      <script src="./assets/js/calendar2.js"></script>
 <script src="./assets/js/svg-img.js"></script>
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/calendar.js"></script>
+  
     <script src="./assets/js/toggle.js"></script>
 
 </body>

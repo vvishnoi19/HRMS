@@ -401,6 +401,11 @@
             display: none;
         }
 
+        .header-control-content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         /* Responsive */
         @media (max-width: 768px) {
             .dashboard-container {
@@ -435,3 +440,27 @@
             }
         }
    
+
+
+
+        .sub-tabs-main-container{
+            display: flex;
+            gap: 20px;
+            font-family:'Inter';
+            font-weight: 800;
+            font-size: 20px;
+        }
+        .sub-tab-main{
+            cursor: pointer;
+        }
+       
+        .sub-tab-main.active{
+            color: black;
+
+        }
+
+
+
+
+        
+        

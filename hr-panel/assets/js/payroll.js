@@ -35,6 +35,7 @@
             event.target.classList.add('active');
         }
 
+
        
   
 
@@ -71,5 +72,9 @@ function openDropDown() {
         document.addEventListener('click', handleOutsideClick);
     }, 0);
 }
+
+
+
+
 
 
