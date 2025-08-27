@@ -8,6 +8,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/report.css">
    <link rel="stylesheet" href="./assets/css/style.css">
+   <style>
+
+
+.expand-icon {
+  transition: transform 0.3s ease;
+ 
+}
+.expand-icon.down {
+  transform: rotate(-90deg); 
+}
+
+tr.active {
+  background: #f9f9f9;
+}
+
+
+
+
+   </style>
 </head>
 <body>
     <div class="dashboard-container">
@@ -414,8 +433,9 @@
      
            <!-- Main Content -->
         <div class="main-content">
+        
             <!-- Report Section -->
-            <div class="section-card">
+            <div class="section-card report-table">
                 <div class="section-header">
                     <h3 class="section-title">Report</h3>
                     <div class="custom-tabs">
@@ -437,138 +457,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Ayush Kumar</td>
-                                <td>598:48:41</td>
-                                <td>$1234</td>
-                                <td>2.2</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sarah Lee</td>
-                                <td>598:48:41</td>
-                                <td>$1234</td>
-                                <td>2.2</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>James Smith</td>
-                                <td>598:48:41</td>
-                                <td>$1234</td>
-                                <td>2.2</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Maria Garcia</td>
-                                <td>598:48:41</td>
-                                <td>$1234</td>
-                                <td>2.2</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>David Johnson</td>
-                                <td>598:48:41</td>
-                                <td>$1234</td>
-                                <td>2.2</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Emily Davis</td>
-                                <td>598:48:41</td>
-                                <td>$1234</td>
-                                <td>2.2</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Michael Brown</td>
-                                <td>598:48:41</td>
-                                <td>$1234</td>
-                                <td>2.2</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Anna Wilson</td>
-                                <td>598:48:41</td>
-                                <td>$1234</td>
-                                <td>2.2</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Robert Jones</td>
-                                <td>598:48:41</td>
-                                <td>$1234</td>
-                                <td>2.2</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Jessica Taylor</td>
-                                <td>598:48:41</td>
-                                <td>$1234</td>
-                                <td>2.2</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Charles Martinez</td>
-                                <td>598:48:41</td>
-                                <td>$1234</td>
-                                <td>2.2</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sophia Clark</td>
-                                <td>598:48:41</td>
-                                <td>$1234</td>
-                                <td>2.2</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
+                           <tr data-user="Ayush Kumar">
+  <td>Ayush Kumar</td>
+  <td>598:48:41</td>
+  <td>$1234</td>
+  <td>2.2</td>
+   <td>
+    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
+      <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </td>
+</tr>
+<tr data-user="Sarah Lee">
+  <td>Sarah Lee</td>
+  <td>598:48:41</td>
+  <td>$1234</td>
+  <td>2.2</td>
+  <td>
+    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
+      <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </td>
+</tr>
+
+                            
+                       
                         </tbody>
                     </table>
                 </div>
@@ -592,10 +505,10 @@
                                 <td>$2567</td>
                                 <td>1.8</td>
                                 <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
+    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
+      <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </td>
                             </tr>
                             <tr>
                                 <td><span class="project-ui-testing">UI Testing</span></td>
@@ -608,39 +521,7 @@
                                     </svg>
                                 </td>
                             </tr>
-                            <tr>
-                                <td><span class="project-prototype">Prototype Development</span></td>
-                                <td>89:45:30</td>
-                                <td>$890</td>
-                                <td>1.5</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="project-accessibility">Accessibility Audit</span></td>
-                                <td>67:30:12</td>
-                                <td>$675</td>
-                                <td>2.3</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="project-dashboard">Dashboard Redesign</span></td>
-                                <td>45:18:25</td>
-                                <td>$567</td>
-                                <td>1.9</td>
-                                <td>
-                                    <svg class="expand-icon" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
+                        
                         </tbody>
                     </table>
                 </div>
@@ -656,7 +537,7 @@
             </div>
 
             <!-- Detailed Entry Section -->
-            <div class="section-card">
+            <div class="section-card detail-entry">
                 <div class="section-header">
                     <h3 class="section-title">Detailed Entry</h3>
                     <div class="custom-tabs">
@@ -671,171 +552,18 @@
                         <thead>
                             <tr>
                                 <th>Description</th>
-                                <th>Project</th>
+                                <th>user</th>
                                 <th>Time</th>
                                 <th>Duration</th>
                                 <th>Date</th>
-                                <th>Revenue</th>
+                                <th>Billing</th>
                                 <th>Billable</th>
                                 <th>Status</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>working on client feedbacks from extras section</td>
-                                <td><span class="project-crm">CRM Design</span></td>
-                                <td>15:32 - 19:52</td>
-                                <td>04:20:45</td>
-                                <td>12/09/2025</td>
-                                <td>$123</td>
-                                <td>
-                                    <div class="billable-indicator inactive">
-                                        <svg class="billable-icon" viewBox="0 0 20 20" fill="none">
-                                            <path d="M14.1667 13.025C14.1663 12.2129 13.8948 11.4243 13.3952 10.784C12.8957 10.1438 12.1967 9.68869 11.4092 9.49083L8.9925 8.89249C8.52456 8.77533 8.11565 8.49104 7.84286 8.0932C7.57006 7.69537 7.45223 7.21148 7.51157 6.73277C7.57091 6.25405 7.80332 5.81358 8.165 5.4944C8.52667 5.17521 8.99262 4.99936 9.475 4.99999H10.525C11.0115 5.00034 11.4808 5.18008 11.843 5.50481C12.2052 5.82954 12.435 6.27644 12.4883 6.75999" fill="currentColor"/>
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td><span class="status-tag status-approved">Approved</span></td>
-                               <td>
-    <div class="action-wrapper" style="position: relative;">
-        <button class="action-btn" aria-haspopup="true" aria-expanded="false">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
-                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
-                <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
-            </svg>
-        </button>
-
-        <div class="dropdown-container" role="menu" aria-label="Actions menu" style="display: none;">
-            <div class="dropdown-section">
-                  <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('view')">
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text poppins">Delete</div>
-                        <div class="dropdown-item-icon">
-                            <!-- Eye icon -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</td>
-
-                            </tr>
-                            <tr>
-                                <td>working on client feedbacks from extras section</td>
-                                <td><span class="project-prototype">Prototype Development</span></td>
-                                <td>15:32 - 19:52</td>
-                                <td>04:20:45</td>
-                                <td>12/09/2025</td>
-                                <td>$123</td>
-                                <td>
-                                    <div class="billable-indicator inactive">
-                                        <svg class="billable-icon" viewBox="0 0 20 20" fill="none">
-                                            <path d="M14.1667 13.025C14.1663 12.2129 13.8948 11.4243 13.3952 10.784C12.8957 10.1438 12.1967 9.68869 11.4092 9.49083L8.9925 8.89249C8.52456 8.77533 8.11565 8.49104 7.84286 8.0932C7.57006 7.69537 7.45223 7.21148 7.51157 6.73277C7.57091 6.25405 7.80332 5.81358 8.165 5.4944C8.52667 5.17521 8.99262 4.99936 9.475 4.99999H10.525C11.0115 5.00034 11.4808 5.18008 11.843 5.50481C12.2052 5.82954 12.435 6.27644 12.4883 6.75999" fill="currentColor"/>
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td><span class="status-tag status-approved">Approved</span></td>
-                                <td>
-                                   <div class="action-wrapper" style="position: relative;">
-        <button class="action-btn" aria-haspopup="true" aria-expanded="false">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
-                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
-                <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
-            </svg>
-        </button>
-
-        <div class="dropdown-container" role="menu" aria-label="Actions menu" style="display: none;">
-            <div class="dropdown-section">
-                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('view')">
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text poppins">View Details</div>
-                        <div class="dropdown-item-icon">
-                            <!-- Eye icon -->
-                        </div>
-                    </div>
-                </div>
-                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('approve')">
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text">Approve</div>
-                        <div class="dropdown-item-icon">
-                            <!-- Checkmark -->
-                        </div>
-                    </div>
-                </div>
-                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('reject')">
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text">Reject</div>
-                        <div class="dropdown-item-icon">
-                            <!-- X icon -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>working on client feedbacks from extras section</td>
-                                <td><span class="project-user-research">User Research</span></td>
-                                <td>15:32 - 19:52</td>
-                                <td>04:20:45</td>
-                                <td>12/09/2025</td>
-                                <td>$123</td>
-                                <td>
-                                    <div class="billable-indicator active">
-                                        <svg class="billable-icon" viewBox="0 0 20 20" fill="none">
-                                            <path d="M14.1667 13.025C14.1663 12.2129 13.8948 11.4243 13.3952 10.784C12.8957 10.1438 12.1967 9.68869 11.4092 9.49083L8.9925 8.89249C8.52456 8.77533 8.11565 8.49104 7.84286 8.0932C7.57006 7.69537 7.45223 7.21148 7.51157 6.73277C7.57091 6.25405 7.80332 5.81358 8.165 5.4944C8.52667 5.17521 8.99262 4.99936 9.475 4.99999H10.525C11.0115 5.00034 11.4808 5.18008 11.843 5.50481C12.2052 5.82954 12.435 6.27644 12.4883 6.75999" fill="currentColor"/>
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td><span class="status-tag status-approved">Approved</span></td>
-                                <td>
-                                   <div class="action-wrapper" style="position: relative;">
-        <button class="action-btn" aria-haspopup="true" aria-expanded="false">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
-                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
-                <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
-            </svg>
-        </button>
-
-        <div class="dropdown-container" role="menu" aria-label="Actions menu" style="display: none;">
-            <div class="dropdown-section">
-                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('view')">
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text poppins">View Details</div>
-                        <div class="dropdown-item-icon">
-                            <!-- Eye icon -->
-                        </div>
-                    </div>
-                </div>
-                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('approve')">
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text">Approve</div>
-                        <div class="dropdown-item-icon">
-                            <!-- Checkmark -->
-                        </div>
-                    </div>
-                </div>
-                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('reject')">
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text">Reject</div>
-                        <div class="dropdown-item-icon">
-                            <!-- X icon -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-                                </td>
-                            </tr>
-                       
+                      
                          
                         </tbody>
                     </table>
@@ -1028,6 +756,7 @@
                     </div>
                 </div>
             </div>
+         
         </div>
         </div>
         <div id="flagged-content" class="container" style="display: none;">
@@ -1478,7 +1207,99 @@
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const rows = document.querySelectorAll("#employee-report tbody tr, #project-report tbody tr");
+  const detailSection = document.querySelector(".detail-entry");
+  const detailTitle = detailSection.querySelector(".section-title");
+  const detailBody = detailSection.querySelector("#all-entry tbody");
+
+  function loadDetails(row) {
+    // reset all rows/icons
+    rows.forEach(r => {
+      r.classList.remove("active");
+      const icon = r.querySelector(".expand-icon");
+      if (icon) icon.classList.remove("down");
+    });
+
+    // activate current row
+    row.classList.add("active");
+    const icon = row.querySelector(".expand-icon");
+    if (icon) icon.classList.add("down");
+
+    // get label
+    const label = row.dataset.user || row.dataset.project || row.cells[0].innerText;
+
+    // update title
+    detailTitle.textContent = `Detailed Entry`;
+
+    // dummy details (backend will replace later)
+    detailBody.innerHTML = `
+      <tr>
+        <td>Task for ${label}</td>
+        <td>rohan</td>
+        <td>10:00 - 12:00</td>
+        <td>02:00:00</td>
+        <td>12/09/2025</td>
+        <td>$200</td>
+        <td>Yes</td>
+        <td><span class="status-tag status-approved">Approved</span></td>
+        <td>                            <div class="action-wrapper" style="position: relative;">
+        <button class="action-btn" aria-haspopup="true" aria-expanded="false">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
+                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+                <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
+            </svg>
+        </button>
+
+        <div class="dropdown-container" role="menu" aria-label="Actions menu" style="display: none;">
+            <div class="dropdown-section">
+              
+                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('approve')">
+                    <div class="dropdown-item-content">
+                        <div class="dropdown-item-text">Approve</div>
+                        <div class="dropdown-item-icon">
+                            <!-- Checkmark -->
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('reject')">
+                    <div class="dropdown-item-content">
+                        <div class="dropdown-item-text">Reject</div>
+                        <div class="dropdown-item-icon">
+                            <!-- X icon -->
+                        </div>
+                    </div>
+                </div>
+                  <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('view')">
+                    <div class="dropdown-item-content">
+                        <div class="dropdown-item-text poppins">Delete</div>
+                        <div class="dropdown-item-icon">
+                            <!-- Eye icon -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></td>
+      </tr>
+    `;
+  }
+
+  // click listener
+  rows.forEach(row => {
+    row.addEventListener("click", () => loadDetails(row));
+  });
+
+  // default: first row active
+  if (rows.length > 0) loadDetails(rows[0]);
+});
+
+
+
+
     </script>
+    
     
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
