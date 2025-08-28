@@ -22,6 +22,13 @@
 tr.active {
   background: #f9f9f9;
 }
+.tab-content, .detail-entry {
+  display: none;
+}
+.tab-content.active, .detail-entry.active {
+  display: block;
+}
+
 
 
 
@@ -537,22 +544,23 @@ tr.active {
             </div>
 
             <!-- Detailed Entry Section -->
-            <div class="section-card detail-entry">
+             <div class="details-container">
+            <div class="section-card detail-entry active" id="employee-detail">
                 <div class="section-header">
                     <h3 class="section-title">Detailed Entry</h3>
                     <div class="custom-tabs">
-                        <button class="tab-btn active" data-tab="all-entry">All Entry</button>
-                        <button class="tab-btn" data-tab="red-flag-entry">Red Flag Entry</button>
+                        <button class="tab-btn active" data-tab="employee-all-entry">All Entry</button>
+                        <button class="tab-btn" data-tab="employee-red-flag-entry">Red Flag Entry</button>
                     </div>
                 </div>
 
                 <!-- All Entry Tab -->
-                <div class="tab-content active" id="all-entry">
+                <div class="tab-content active" id="employee-all-entry">
                     <table class="data-table">
                         <thead>
                             <tr>
                                 <th>Description</th>
-                                <th>user</th>
+                                <th>Project</th>
                                 <th>Time</th>
                                 <th>Duration</th>
                                 <th>Date</th>
@@ -570,7 +578,7 @@ tr.active {
                 </div>
 
                 <!-- Red Flag Entry Tab -->
-                <div class="tab-content" id="red-flag-entry">
+                <div class="tab-content" id="employee-red-flag-entry">
                     <table class="data-table">
                         <thead>
                             <tr>
@@ -586,134 +594,7 @@ tr.active {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="red-flag-row">
-                                <td>
-                                    <div style="display: flex; align-items: center;">
-                                        <svg class="red-flag-icon" viewBox="0 0 20 20" fill="none">
-                                            <path d="M12.6667 5.96667L6.00001 3.08333V2.29167C6.00001 1.95 5.71668 1.66667 5.37501 1.66667C5.03334 1.66667 4.75001 1.95 4.75001 2.29167V17.7083C4.75001 18.05 5.03334 18.3333 5.37501 18.3333C5.71668 18.3333 6.00001 18.05 6.00001 17.7083V14.4083L12.85 11.025C14.2417 10.3083 14.9833 9.38333 14.9417 8.40833C14.9 7.43333 14.0917 6.56667 12.6667 5.96667Z" fill="currentColor"/>
-                                        </svg>
-                                        <span>working on client feedbacks from extras section</span>
-                                    </div>
-                                </td>
-                                <td><span class="project-ui-testing">UI Testing</span></td>
-                                <td><span class="time-red">15:32 - 19:52</span></td>
-                                <td><span class="time-red">04:20:45</span></td>
-                                <td>12/09/2025</td>
-                                <td>$123</td>
-                                <td>
-                                    <div class="billable-indicator active">
-                                        <svg class="billable-icon" viewBox="0 0 20 20" fill="none">
-                                            <path d="M14.1667 13.025C14.1663 12.2129 13.8948 11.4243 13.3952 10.784C12.8957 10.1438 12.1967 9.68869 11.4092 9.49083L8.9925 8.89249C8.52456 8.77533 8.11565 8.49104 7.84286 8.0932C7.57006 7.69537 7.45223 7.21148 7.51157 6.73277C7.57091 6.25405 7.80332 5.81358 8.165 5.4944C8.52667 5.17521 8.99262 4.99936 9.475 4.99999H10.525C11.0115 5.00034 11.4808 5.18008 11.843 5.50481C12.2052 5.82954 12.435 6.27644 12.4883 6.75999" fill="currentColor"/>
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td><span class="status-tag status-pending">Approval Pending</span></td>
-                                <td>
-                                     <div class="action-wrapper" style="position: relative;">
-        <button class="action-btn" aria-haspopup="true" aria-expanded="false">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
-                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
-                <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
-            </svg>
-        </button>
-
-        <div class="dropdown-container" role="menu" aria-label="Actions menu" style="display: none;">
-            <div class="dropdown-section">
-              
-                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('approve')">
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text">Approve</div>
-                        <div class="dropdown-item-icon">
-                            <!-- Checkmark -->
-                        </div>
-                    </div>
-                </div>
-                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('reject')">
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text">Reject</div>
-                        <div class="dropdown-item-icon">
-                            <!-- X icon -->
-                        </div>
-                    </div>
-                </div>
-                  <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('view')">
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text poppins">Delete</div>
-                        <div class="dropdown-item-icon">
-                            <!-- Eye icon -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-                                </td>
-                            </tr>
-                            <tr class="red-flag-row">
-                                <td>
-                                    <div style="display: flex; align-items: center;">
-                                        <svg class="red-flag-icon" viewBox="0 0 20 20" fill="none">
-                                            <path d="M12.6667 5.96667L6.00001 3.08333V2.29167C6.00001 1.95 5.71668 1.66667 5.37501 1.66667C5.03334 1.66667 4.75001 1.95 4.75001 2.29167V17.7083C4.75001 18.05 5.03334 18.3333 5.37501 18.3333C5.71668 18.3333 6.00001 18.05 6.00001 17.7083V14.4083L12.85 11.025C14.2417 10.3083 14.9833 9.38333 14.9417 8.40833C14.9 7.43333 14.0917 6.56667 12.6667 5.96667Z" fill="currentColor"/>
-                                        </svg>
-                                        <span>working on client feedbacks from extras section</span>
-                                    </div>
-                                </td>
-                                <td><span class="project-crm">CRM Design</span></td>
-                                <td><span class="time-red">14:20 - 18:45</span></td>
-                                <td><span class="time-red">04:25:12</span></td>
-                                <td>11/09/2025</td>
-                                <td>$156</td>
-                                <td>
-                                    <div class="billable-indicator active">
-                                        <svg class="billable-icon" viewBox="0 0 20 20" fill="none">
-                                            <path d="M14.1667 13.025C14.1663 12.2129 13.8948 11.4243 13.3952 10.784C12.8957 10.1438 12.1967 9.68869 11.4092 9.49083L8.9925 8.89249C8.52456 8.77533 8.11565 8.49104 7.84286 8.0932C7.57006 7.69537 7.45223 7.21148 7.51157 6.73277C7.57091 6.25405 7.80332 5.81358 8.165 5.4944C8.52667 5.17521 8.99262 4.99936 9.475 4.99999H10.525C11.0115 5.00034 11.4808 5.18008 11.843 5.50481C12.2052 5.82954 12.435 6.27644 12.4883 6.75999" fill="currentColor"/>
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td><span class="status-tag status-pending">Approval Pending</span></td>
-                                <td>
-                                    <div class="action-wrapper" style="position: relative;">
-        <button class="action-btn" aria-haspopup="true" aria-expanded="false">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
-                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
-                <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
-            </svg>
-        </button>
-
-        <div class="dropdown-container" role="menu" aria-label="Actions menu" style="display: none;">
-            <div class="dropdown-section">
-              
-                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('approve')">
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text">Approve</div>
-                        <div class="dropdown-item-icon">
-                            <!-- Checkmark -->
-                        </div>
-                    </div>
-                </div>
-                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('reject')">
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text">Reject</div>
-                        <div class="dropdown-item-icon">
-                            <!-- X icon -->
-                        </div>
-                    </div>
-                </div>
-                  <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('view')">
-                    <div class="dropdown-item-content">
-                        <div class="dropdown-item-text poppins">Delete</div>
-                        <div class="dropdown-item-icon">
-                            <!-- Eye icon -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-                                </td>
-                            </tr>
+                         
                         </tbody>
                     </table>
                 </div>
@@ -755,6 +636,102 @@ tr.active {
                         </div>
                     </div>
                 </div>
+            </div>
+
+
+
+            <div class="section-card detail-entry" id="project-detail">
+                <div class="section-header">
+                    <h3 class="section-title">Detailed Entry</h3>
+                    <div class="custom-tabs">
+                        <button class="tab-btn active" data-tab="project-all-entry">All Entry</button>
+                        <button class="tab-btn" data-tab="project-red-flag-entry">Red Flag Entry</button>
+                    </div>
+                </div>
+
+                <!-- All Entry Tab -->
+                <div class="tab-content active" id="project-all-entry">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>User</th>
+                                <th>Time</th>
+                                <th>Duration</th>
+                                <th>Date</th>
+                                <th>Billing</th>
+                                <th>Billable</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                      
+                         
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Red Flag Entry Tab -->
+                <div class="tab-content" id="project-red-flag-entry">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Project</th>
+                                <th>Time</th>
+                                <th>Duration</th>
+                                <th>Date</th>
+                                <th>Revenue</th>
+                                <th>Billable</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                         
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-container">
+                    <div class="pagination-info">Showing 1-10 of 20</div>
+                    <div class="pagination-controls">
+                        <div class="rows-per-page">
+                            <span>Rows per page</span>
+                            <select>
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                            </select>
+                        </div>
+                        <div class="page-info">Page 1 of 10</div>
+                        <div class="pagination-nav">
+                            <button class="pagination-btn disabled">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M7.33333 11.3333L4 8L7.33333 4.66667M12 11.3333L8.66667 8L12 4.66667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <button class="pagination-btn disabled">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <button class="pagination-btn">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <button class="pagination-btn">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M4 11.3333L7.33333 8L4 4.66667M8.66667 11.3333L12 8L8.66667 4.66667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
          
         </div>
@@ -1207,43 +1184,126 @@ tr.active {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const rows = document.querySelectorAll("#employee-report tbody tr, #project-report tbody tr");
-  const detailSection = document.querySelector(".detail-entry");
-  const detailTitle = detailSection.querySelector(".section-title");
-  const detailBody = detailSection.querySelector("#all-entry tbody");
 
-  function loadDetails(row) {
-    // reset all rows/icons
+
+
+
+
+
+
+
+
+    </script>
+    
+    <script>
+// Top-level Employee / Project tab switch
+document.querySelectorAll(".section-card.report-table .tab-btn").forEach(btn => {
+  btn.addEventListener("click", function() {
+    let tabId = this.dataset.tab;
+
+    // Report list tab switch (left table)
+    document.querySelectorAll(".report-table .tab-btn").forEach(b => b.classList.remove("active"));
+    this.classList.add("active");
+
+    document.querySelectorAll(".report-table .tab-content").forEach(c => c.classList.remove("active"));
+    document.getElementById(tabId).classList.add("active");
+
+    // Right details switch
+    document.querySelectorAll(".detail-entry").forEach(d => d.classList.remove("active"));
+    if (tabId === "employee-report") {
+      document.getElementById("employee-detail").classList.add("active");
+    } else {
+      document.getElementById("project-detail").classList.add("active");
+    }
+  });
+});
+
+// Inside Employee detail tabs
+document.querySelectorAll("#employee-detail .tab-btn").forEach(btn => {
+  btn.addEventListener("click", function() {
+    let parent = this.closest("#employee-detail");
+    let tabId = this.dataset.tab;
+
+    parent.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    this.classList.add("active");
+
+    parent.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+    parent.querySelector("#" + tabId).classList.add("active");
+  });
+});
+
+// Inside Project detail tabs
+document.querySelectorAll("#project-detail .tab-btn").forEach(btn => {
+  btn.addEventListener("click", function() {
+    let parent = this.closest("#project-detail");
+    let tabId = this.dataset.tab;
+
+    parent.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    this.classList.add("active");
+
+    parent.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+    parent.querySelector("#" + tabId).classList.add("active");
+  });
+});
+
+// Row click: show details
+document.querySelectorAll("#employee-report tbody tr").forEach(row => {
+  row.addEventListener("click", function() {
+    document.getElementById("employee-detail").classList.add("active");
+    document.getElementById("project-detail").classList.remove("active");
+  });
+});
+
+document.querySelectorAll("#project-report tbody tr").forEach(row => {
+  row.addEventListener("click", function() {
+    document.getElementById("project-detail").classList.add("active");
+    document.getElementById("employee-detail").classList.remove("active");
+  });
+});
+
+
+
+
+// render detail container for each row
+document.addEventListener("DOMContentLoaded", () => {
+  const employeeRows = document.querySelectorAll("#employee-report tbody tr");
+  const projectRows = document.querySelectorAll("#project-report tbody tr");
+
+  const employeeDetail = document.getElementById("employee-detail");
+  const projectDetail = document.getElementById("project-detail");
+
+  function resetRows(rows) {
     rows.forEach(r => {
       r.classList.remove("active");
       const icon = r.querySelector(".expand-icon");
       if (icon) icon.classList.remove("down");
     });
+  }
 
-    // activate current row
+  function loadEmployeeDetails(row) {
+    resetRows(employeeRows);
     row.classList.add("active");
-    const icon = row.querySelector(".expand-icon");
-    if (icon) icon.classList.add("down");
+    row.querySelector(".expand-icon")?.classList.add("down");
 
-    // get label
-    const label = row.dataset.user || row.dataset.project || row.cells[0].innerText;
+    const label = row.dataset.user || row.cells[0].innerText;
 
-    // update title
-    detailTitle.textContent = `Detailed Entry`;
+    employeeDetail.classList.add("active");
+    document.querySelector("#employee-detail .section-title").textContent = `Detailed Entry`;
 
-    // dummy details (backend will replace later)
-    detailBody.innerHTML = `
+    // ✅ All Entry
+    const allTbody = document.querySelector("#employee-all-entry tbody");
+    allTbody.innerHTML = `
       <tr>
         <td>Task for ${label}</td>
-        <td>rohan</td>
+        <td>CRM Design</td>
         <td>10:00 - 12:00</td>
         <td>02:00:00</td>
         <td>12/09/2025</td>
         <td>$200</td>
         <td>Yes</td>
         <td><span class="status-tag status-approved">Approved</span></td>
-        <td>                            <div class="action-wrapper" style="position: relative;">
+         <td>
+        <div class="action-wrapper" style="position: relative;">
         <button class="action-btn" aria-haspopup="true" aria-expanded="false">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
@@ -1281,26 +1341,264 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </div>
         </div>
-    </div></td>
+    </div>
+                                </td>
+        
       </tr>
     `;
+
+    // ✅ Red Flag Entry
+    const redTbody = document.querySelector("#employee-red-flag-entry tbody");
+  redTbody.innerHTML = `
+  <tr class="red-flag-row">
+    <td>
+      <div style="display: flex; align-items: center;">
+        <svg class="red-flag-icon" viewBox="0 0 20 20" fill="none">
+          <path d="M12.6667 5.96667L6.00001 3.08333V2.29167C6.00001 1.95 5.71668 1.66667 5.37501 1.66667C5.03334 1.66667 4.75001 1.95 4.75001 2.29167V17.7083C4.75001 18.05 5.03334 18.3333 5.37501 18.3333C5.71668 18.3333 6.00001 18.05 6.00001 17.7083V14.4083L12.85 11.025C14.2417 10.3083 14.9833 9.38333 14.9417 8.40833C14.9 7.43333 14.0917 6.56667 12.6667 5.96667Z" fill="currentColor"/>
+        </svg>
+        <span>Working on client feedbacks from extras section</span>
+      </div>
+    </td>
+    <td><span class="project-ui-testing">CRM</span></td>
+    <td><span class="time-red">15:32 - 19:52</span></td>
+    <td><span class="time-red">04:20:45</span></td>
+    <td>12/09/2025</td>
+    <td>$123</td>
+    <td>
+      <div class="billable-indicator active">
+        <svg class="billable-icon" viewBox="0 0 20 20" fill="none">
+          <path d="M14.1667 13.025C14.1663 12.2129 13.8948 11.4243 13.3952 10.784C12.8957 10.1438 12.1967 9.68869 11.4092 9.49083L8.9925 8.89249C8.52456 8.77533 8.11565 8.49104 7.84286 8.0932C7.57006 7.69537 7.45223 7.21148 7.51157 6.73277C7.57091 6.25405 7.80332 5.81358 8.165 5.4944C8.52667 5.17521 8.99262 4.99936 9.475 4.99999H10.525C11.0115 5.00034 11.4808 5.18008 11.843 5.50481C12.2052 5.82954 12.435 6.27644 12.4883 6.75999" fill="currentColor"/>
+        </svg>
+      </div>
+    </td>
+    <td><span class="status-tag status-pending">Approval Pending</span></td>
+   <td>
+        <div class="action-wrapper" style="position: relative;">
+        <button class="action-btn" aria-haspopup="true" aria-expanded="false">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
+                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+                <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
+            </svg>
+        </button>
+
+        <div class="dropdown-container" role="menu" aria-label="Actions menu" style="display: none;">
+            <div class="dropdown-section">
+              
+                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('approve')">
+                    <div class="dropdown-item-content">
+                        <div class="dropdown-item-text">Approve</div>
+                        <div class="dropdown-item-icon">
+                            <!-- Checkmark -->
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('reject')">
+                    <div class="dropdown-item-content">
+                        <div class="dropdown-item-text">Reject</div>
+                        <div class="dropdown-item-icon">
+                            <!-- X icon -->
+                        </div>
+                    </div>
+                </div>
+                  <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('view')">
+                    <div class="dropdown-item-content">
+                        <div class="dropdown-item-text poppins">Delete</div>
+                        <div class="dropdown-item-icon">
+                            <!-- Eye icon -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                                </td>
+  </tr>
+`;
   }
 
-  // click listener
-  rows.forEach(row => {
-    row.addEventListener("click", () => loadDetails(row));
+  function loadProjectDetails(row) {
+    resetRows(projectRows);
+    row.classList.add("active");
+    row.querySelector(".expand-icon")?.classList.add("down");
+
+    const label = row.dataset.project || row.cells[0].innerText;
+
+    projectDetail.classList.add("active");
+    document.querySelector("#project-detail .section-title").textContent = `Detailed Entry`;
+
+    // ✅ All Entry
+    const allTbody = document.querySelector("#project-all-entry tbody");
+    allTbody.innerHTML = `
+      <tr>
+        <td>Task under ${label}</td>
+        <td>Ayush Kumar</td>
+        <td>14:00 - 17:00</td>
+        <td>03:00:00</td>
+        <td>12/09/2025</td>
+        <td>$500</td>
+        <td>Yes</td>
+        <td><span class="status-tag status-pending">Approval Pending</span></td>
+       <td>
+                                     <div class="action-wrapper" style="position: relative;">
+        <button class="action-btn" aria-haspopup="true" aria-expanded="false">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
+                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+                <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
+            </svg>
+        </button>
+
+        <div class="dropdown-container" role="menu" aria-label="Actions menu" style="display: none;">
+            <div class="dropdown-section">
+              
+                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('approve')">
+                    <div class="dropdown-item-content">
+                        <div class="dropdown-item-text">Approve</div>
+                        <div class="dropdown-item-icon">
+                            <!-- Checkmark -->
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('reject')">
+                    <div class="dropdown-item-content">
+                        <div class="dropdown-item-text">Reject</div>
+                        <div class="dropdown-item-icon">
+                            <!-- X icon -->
+                        </div>
+                    </div>
+                </div>
+                  <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('view')">
+                    <div class="dropdown-item-content">
+                        <div class="dropdown-item-text poppins">Delete</div>
+                        <div class="dropdown-item-icon">
+                            <!-- Eye icon -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                                </td>
+      </tr>
+    `;
+
+    // ✅ Red Flag Entry
+    const redTbody = document.querySelector("#project-red-flag-entry tbody");
+    redTbody.innerHTML = `
+  <tr class="red-flag-row">
+    <td>
+      <div style="display: flex; align-items: center;">
+        <svg class="red-flag-icon" viewBox="0 0 20 20" fill="none">
+          <path d="M12.6667 5.96667L6.00001 3.08333V2.29167C6.00001 1.95 5.71668 1.66667 5.37501 1.66667C5.03334 1.66667 4.75001 1.95 4.75001 2.29167V17.7083C4.75001 18.05 5.03334 18.3333 5.37501 18.3333C5.71668 18.3333 6.00001 18.05 6.00001 17.7083V14.4083L12.85 11.025C14.2417 10.3083 14.9833 9.38333 14.9417 8.40833C14.9 7.43333 14.0917 6.56667 12.6667 5.96667Z" fill="currentColor"/>
+        </svg>
+        <span>Working on client feedbacks from extras section</span>
+      </div>
+    </td>
+    <td><span class="project-ui-testing">CRM Design</span></td>
+    <td><span class="time-red">15:32 - 19:52</span></td>
+    <td><span class="time-red">04:20:45</span></td>
+    <td>12/09/2025</td>
+    <td>$123</td>
+    <td>
+      <div class="billable-indicator active">
+        <svg class="billable-icon" viewBox="0 0 20 20" fill="none">
+          <path d="M14.1667 13.025C14.1663 12.2129 13.8948 11.4243 13.3952 10.784C12.8957 10.1438 12.1967 9.68869 11.4092 9.49083L8.9925 8.89249C8.52456 8.77533 8.11565 8.49104 7.84286 8.0932C7.57006 7.69537 7.45223 7.21148 7.51157 6.73277C7.57091 6.25405 7.80332 5.81358 8.165 5.4944C8.52667 5.17521 8.99262 4.99936 9.475 4.99999H10.525C11.0115 5.00034 11.4808 5.18008 11.843 5.50481C12.2052 5.82954 12.435 6.27644 12.4883 6.75999" fill="currentColor"/>
+        </svg>
+      </div>
+    </td>
+    <td><span class="status-tag status-pending">Approval Pending</span></td>
+   
+      <td>
+        <div class="action-wrapper" style="position: relative;">
+        <button class="action-btn" aria-haspopup="true" aria-expanded="false">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
+                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+                <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
+            </svg>
+        </button>
+
+        <div class="dropdown-container" role="menu" aria-label="Actions menu" style="display: none;">
+            <div class="dropdown-section">
+              
+                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('approve')">
+                    <div class="dropdown-item-content">
+                        <div class="dropdown-item-text">Approve</div>
+                        <div class="dropdown-item-icon">
+                            <!-- Checkmark -->
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('reject')">
+                    <div class="dropdown-item-content">
+                        <div class="dropdown-item-text">Reject</div>
+                        <div class="dropdown-item-icon">
+                            <!-- X icon -->
+                        </div>
+                    </div>
+                </div>
+                  <div class="dropdown-item" role="menuitem" tabindex="0" onclick="handleAction('view')">
+                    <div class="dropdown-item-content">
+                        <div class="dropdown-item-text poppins">Delete</div>
+                        <div class="dropdown-item-icon">
+                            <!-- Eye icon -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                                </td>
+  </tr>
+`;
+  }
+
+  // Attach click listeners
+  employeeRows.forEach(row => {
+    row.addEventListener("click", () => loadEmployeeDetails(row));
+  });
+  projectRows.forEach(row => {
+    row.addEventListener("click", () => loadProjectDetails(row));
   });
 
-  // default: first row active
-  if (rows.length > 0) loadDetails(rows[0]);
+  // ✅ Tab switching
+  const tabs = document.querySelectorAll(".tab");
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      const target = tab.dataset.target;
+
+      // Hide both details first
+      employeeDetail.classList.remove("active");
+      projectDetail.classList.remove("active");
+
+      if (target === "employee") {
+        if (employeeRows.length > 0) {
+          loadEmployeeDetails(employeeRows[0]);
+        }
+      } else if (target === "project") {
+        if (projectRows.length > 0) {
+          loadProjectDetails(projectRows[0]);
+        }
+      }
+    });
+  });
+
+  // ✅ By default load employee tab + first row
+  if (employeeRows.length > 0) {
+    loadEmployeeDetails(employeeRows[0]);
+  }
 });
 
 
 
 
-    </script>
-    
-    
+
+
+
+
+</script>
+
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script src="./assets/js/calendar.js"></script>
